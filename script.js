@@ -139,7 +139,7 @@ const GURUS = [
         gharana: "Tabla",
         title: "Tabla Guru & Founder, TablaGyan",
         img: "https://tablagyan.com/static/images/tabla-professor-2.jpeg",
-        bio: "With more than four decades of dedicated practice and teaching, Panditji has shaped hundreds of young hands into confident tabla artists. His approach blends rigorous traditional training with gentle encouragement — the true spirit of the guru-shishya parampara.",
+        bio: "Shri. DILIP PURANIK is the visionary founder and principal architect of TablaGyan - Academy of Music. He has earned a distinguished place in Indian classical music as a performer, guru, and mentor, instrumental in spreading the art of tabla globally. Son of Shri Ramesh Puranik (harmonium) and Smt. Kasturi Puranik (vocalist), his journey reflects a perfect blend of divine grace and rigorous discipline.",
         specialty: "Kayda, Rela & rare Bandishes of Farrukhabad"
     },
     {
@@ -148,7 +148,7 @@ const GURUS = [
         gharana: "Vocals",
         title: "Vocals Guru",
         img: "https://tablagyan.com/static/images/sneha-pathak.jpeg",
-        bio: "A torchbearer of the Punjab gharana’s fiery energy, Ustadji is known for lightning-fast relas and deeply emotional peshkars. Students wait all year for the rare chance to sit in his masterclass during GuruVandan.",
+        bio: "Smt. Sneha Pathak is a dedicated vocals teacher at TablaGyan, originally from Maharashtra. Her musical journey is a testament to strong foundations and successful mastery of the Visharad grade in Hindustani classical music.",
         specialty: "Peshkar, Gat & high-speed improvisation"
     }
 ];
