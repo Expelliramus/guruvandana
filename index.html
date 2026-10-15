@@ -193,17 +193,9 @@
             <div class="flex items-center justify-between h-20 md:h-24">
 
                 <a href="#" class="flex items-center space-x-3 group">
-                    <div
-                        class="relative w-11 h-11 flex items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 p-0.5 shadow-md group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full bg-maroon-900 rounded-full flex items-center justify-center">
-                            <svg class="w-7 h-7 text-gold-400" viewBox="0 0 24 24" fill="currentColor"
-                                aria-hidden="true">
-                                <path
-                                    d="M6 3c-2.2 0-4 1.34-4 3v8c0 1.66 1.8 3 4 3s4-1.34 4-3V6c0-1.66-1.8-3-4-3zm0 1.5c1.1 0 2 .45 2 1s-.9 1-2 1-2-.45-2-1 .9-1 2-1zm12 1.5c-2.2 0-4 1.34-4 3v8c0 1.66 1.8 3 4 3s4-1.34 4-3V9c0-1.66-1.8-3-4-3zm0 1.5c1.1 0 2 .45 2 1s-.9 1-2 1-2-.45-2-1 .9-1 2-1z" />
-                                <path d="M4 11h4v1H4zm12 2h4v1h-4z" opacity="0.6" />
-                            </svg>
-                        </div>
-                    </div>
+                    <img src="https://tablagyan.com/static/images/logo-dark1.png" alt="TablaGyan logo"
+                        class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-gold-500/70 shadow-md group-hover:scale-105 transition-transform"
+                        onerror="this.style.display='none'">
                     <div class="flex flex-col">
                         <span
                             class="font-cinzel text-xl md:text-2xl font-bold tracking-wider gold-gradient-text">TABLAGYAN</span>
@@ -244,24 +236,35 @@
                         GuruVandan</span>
                 </div>
 
-                <nav
-                    class="hidden xl:flex items-center space-x-6 text-xs font-semibold tracking-wider uppercase font-sans">
-                    <a href="#about" class="text-gold-300 hover:text-white transition-colors duration-200">About</a>
-                    <a href="#performances"
-                        class="text-gold-300 hover:text-white transition-colors duration-200">Performances</a>
-                    <a href="#gurus" class="text-gold-300 hover:text-white transition-colors duration-200">Gurus</a>
-                    <a href="#gallery" class="text-gold-300 hover:text-white transition-colors duration-200">Gallery</a>
-                    <a href="#schedule"
-                        class="text-gold-300 hover:text-white transition-colors duration-200">Schedule</a>
-                    <a href="#contact" class="text-gold-300 hover:text-white transition-colors duration-200">Contact</a>
-                </nav>
+                <div class="flex items-center gap-4 xl:gap-6">
+                    <nav
+                        class="hidden xl:flex items-center space-x-6 text-xs font-semibold tracking-wider uppercase font-sans">
+                        <a href="#about" class="text-gold-300 hover:text-white transition-colors duration-200">About</a>
+                        <a href="#performances"
+                            class="text-gold-300 hover:text-white transition-colors duration-200">Performances</a>
+                        <a href="#gurus" class="text-gold-300 hover:text-white transition-colors duration-200">Gurus</a>
+                        <a href="#gallery"
+                            class="text-gold-300 hover:text-white transition-colors duration-200">Gallery</a>
+                        <a href="#schedule"
+                            class="text-gold-300 hover:text-white transition-colors duration-200">Schedule</a>
+                        <a href="#contact"
+                            class="text-gold-300 hover:text-white transition-colors duration-200">Contact</a>
+                    </nav>
 
-                <div class="flex xl:hidden items-center space-x-3">
-                    <button id="mobile-menu-btn"
-                        class="text-gold-400 hover:text-white p-2 rounded-md focus:outline-none"
-                        aria-label="Toggle Navigation">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                    <button id="music-toggle" type="button"
+                        class="flex items-center gap-2 px-3 py-2 rounded-full border border-gold-500/40 text-gold-300 hover:text-white hover:bg-maroon-800 text-xs font-semibold uppercase tracking-wider transition-all focus:outline-none"
+                        aria-pressed="false" aria-label="Toggle background music" title="Toggle background music">
+                        <i id="music-icon" class="fa-solid fa-volume-xmark"></i>
+                        <span id="music-label" class="hidden sm:inline">Music Off</span>
                     </button>
+
+                    <div class="flex xl:hidden items-center space-x-3">
+                        <button id="mobile-menu-btn"
+                            class="text-gold-400 hover:text-white p-2 rounded-md focus:outline-none"
+                            aria-label="Toggle Navigation">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -295,22 +298,19 @@
     <section class="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] min-h-[480px] bg-maroon-950 overflow-hidden">
         <div id="hero-carousel" class="relative w-full h-full will-change-transform">
             <div class="carousel-slide absolute inset-0 opacity-100 scale-105">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1920&q=80"
-                    alt="TablaGyan Stage Performance"
+                <img src="hero1.JPG" alt="TablaGyan Stage Performance"
                     class="w-full h-full object-cover object-center filter brightness-[0.62] contrast-[1.08]"
                     onerror="this.src='https://placehold.co/1920x1080/3D0B12/D4AF37?text=TablaGyan+GuruVandan+Stage'">
                 <div class="absolute inset-0 bg-gradient-to-t from-maroon-950 via-maroon-950/45 to-transparent"></div>
             </div>
             <div class="carousel-slide absolute inset-0 opacity-0 scale-100">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1920&q=80"
-                    alt="Rhythm Solo Performance"
+                <img src="hero2.JPG" alt="Rhythm Solo Performance"
                     class="w-full h-full object-cover object-center filter brightness-[0.58] contrast-[1.08]"
                     onerror="this.src='https://placehold.co/1920x1080/58111A/FFFFFF?text=Tabla+Solo+Performance'">
                 <div class="absolute inset-0 bg-gradient-to-t from-maroon-950 via-maroon-950/45 to-transparent"></div>
             </div>
             <div class="carousel-slide absolute inset-0 opacity-0 scale-100">
-                <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1920&q=80"
-                    alt="Grand Ensemble Performance"
+                <img src="hero3.JPG" alt="Grand Ensemble Performance"
                     class="w-full h-full object-cover object-center filter brightness-[0.58] contrast-[1.08]"
                     onerror="this.src='https://placehold.co/1920x1080/2A070C/D4AF37?text=Grand+Tabla+Ensemble'">
                 <div class="absolute inset-0 bg-gradient-to-t from-maroon-950 via-maroon-950/45 to-transparent"></div>
@@ -383,112 +383,37 @@
                             GURUS</h2>
                         <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-2"></div>
                     </div>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 my-4">
-                        <div class="flex flex-col items-center group cursor-pointer" onclick="openGuruModal(0)">
-                            <div
-                                class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md group-hover:scale-105 transition-transform duration-300">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
-                                    alt="Pt. Ramswaroop Sharma" class="w-full h-full object-cover rounded-full"
-                                    onerror="this.src='https://placehold.co/200x200/58111A/D4AF37?text=Pt.+Ramswaroop'">
-                            </div>
-                            <h3
-                                class="font-playfair font-bold text-maroon-900 text-xs sm:text-sm text-center mt-2 group-hover:text-gold-600 transition-colors">
-                                Pt. Ramswaroop</h3>
-                            <p class="text-[10px] text-gray-600 text-center">Farrukhabad</p>
-                        </div>
-                        <div class="flex flex-col items-center group cursor-pointer" onclick="openGuruModal(1)">
-                            <div
-                                class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md group-hover:scale-105 transition-transform duration-300">
-                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
-                                    alt="Ustad Altaf Khan" class="w-full h-full object-cover rounded-full"
-                                    onerror="this.src='https://placehold.co/200x200/58111A/D4AF37?text=Ust.+Altaf'">
-                            </div>
-                            <h3
-                                class="font-playfair font-bold text-maroon-900 text-xs sm:text-sm text-center mt-2 group-hover:text-gold-600 transition-colors">
-                                Ust. Altaf Khan</h3>
-                            <p class="text-[10px] text-gray-600 text-center">Punjab</p>
-                        </div>
-                        <div class="flex flex-col items-center group cursor-pointer" onclick="openGuruModal(2)">
-                            <div
-                                class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md group-hover:scale-105 transition-transform duration-300">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80"
-                                    alt="Vidwan Suresh Kumar" class="w-full h-full object-cover rounded-full"
-                                    onerror="this.src='https://placehold.co/200x200/58111A/D4AF37?text=Vid.+Suresh'">
-                            </div>
-                            <h3
-                                class="font-playfair font-bold text-maroon-900 text-xs sm:text-sm text-center mt-2 group-hover:text-gold-600 transition-colors">
-                                Vid. Suresh Kumar</h3>
-                            <p class="text-[10px] text-gray-600 text-center">Delhi</p>
-                        </div>
-                        <div class="flex flex-col items-center group cursor-pointer" onclick="openGuruModal(3)">
-                            <div
-                                class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md group-hover:scale-105 transition-transform duration-300">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
-                                    alt="Smt. Meenakshi Rao" class="w-full h-full object-cover rounded-full"
-                                    onerror="this.src='https://placehold.co/200x200/58111A/D4AF37?text=Smt.+Meenakshi'">
-                            </div>
-                            <h3
-                                class="font-playfair font-bold text-maroon-900 text-xs sm:text-sm text-center mt-2 group-hover:text-gold-600 transition-colors">
-                                Smt. Meenakshi</h3>
-                            <p class="text-[10px] text-gray-600 text-center">Ajrada</p>
-                        </div>
-                    </div>
+                    <!-- Filled dynamically from GURUS data in script.js -->
+                    <div id="meet-gurus-grid" class="grid grid-cols-2 gap-6 sm:gap-8 my-4 max-w-md mx-auto"></div>
                 </div>
                 <div class="mt-4 text-center">
                     <a href="#gurus"
                         class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-maroon-900 hover:text-gold-600 transition-colors">
-                        <span>View All Honored Gurus</span>
+                        <span>Meet Our Honored Gurus</span>
                         <i class="fa-solid fa-arrow-right ml-2 text-gold-500"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="bg-cream-100 rounded-2xl p-6 sm:p-8 gold-border-glow flex flex-col justify-between card-lift">
-                <div>
-                    <div class="text-center mb-6">
+            <div class="bg-cream-100 rounded-2xl p-6 sm:p-8 gold-border-glow flex flex-col justify-center card-lift">
+                <div class="text-center">
+                    <div class="mb-6">
                         <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-maroon-900 tracking-wide">EVENT
                             GALLERY</h2>
                         <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-2"></div>
                     </div>
-                    <div class="grid grid-cols-3 gap-2 sm:gap-3 my-2">
-                        <div class="relative aspect-video rounded-lg overflow-hidden group cursor-pointer shadow-sm"
-                            onclick="openLightbox('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80')">
-                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80"
-                                alt="GuruVandan stage"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div
-                                class="absolute inset-0 bg-maroon-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <i class="fa-solid fa-magnifying-glass-plus text-gold-400 text-lg"></i>
-                            </div>
+                    <div class="py-8 px-4">
+                        <div
+                            class="w-16 h-16 mx-auto rounded-full bg-maroon-900/10 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-camera text-gold-500 text-2xl"></i>
                         </div>
-                        <div class="relative aspect-video rounded-lg overflow-hidden group cursor-pointer shadow-sm"
-                            onclick="openLightbox('https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80')">
-                            <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=400&q=80"
-                                alt="Ensemble"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div
-                                class="absolute inset-0 bg-maroon-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <i class="fa-solid fa-magnifying-glass-plus text-gold-400 text-lg"></i>
-                            </div>
-                        </div>
-                        <div class="relative aspect-video rounded-lg overflow-hidden group cursor-pointer shadow-sm"
-                            onclick="openLightbox('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80')">
-                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
-                                alt="Felicitation"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div
-                                class="absolute inset-0 bg-maroon-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <i class="fa-solid fa-magnifying-glass-plus text-gold-400 text-lg"></i>
-                            </div>
-                        </div>
+                        <p class="font-playfair text-maroon-900 text-base sm:text-lg leading-relaxed">
+                            Photos will be posted after the event
+                        </p>
+                        <p class="text-xs text-gray-500 mt-2">
+                            Stay tuned for moments from GuruVandan 2026
+                        </p>
                     </div>
-                </div>
-                <div class="mt-4 text-center">
-                    <a href="#gallery"
-                        class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-maroon-900 hover:text-gold-600 transition-colors">
-                        <span>Browse Complete Gallery</span>
-                        <i class="fa-solid fa-arrow-right ml-2 text-gold-500"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -527,7 +452,7 @@
                     </div>
                     <div class="p-4 rounded-xl bg-maroon-800/60 border border-gold-500/20">
                         <i class="fa-solid fa-music text-gold-400 text-2xl mb-2"></i>
-                        <h4 class="font-cinzel font-bold text-gold-300 text-sm">5+ Gharanas</h4>
+                        <h4 class="font-cinzel font-bold text-gold-300 text-sm">Gharanas</h4>
                         <p class="text-xs text-gray-300 mt-1">Diverse Tabla Traditions</p>
                     </div>
                 </div>
@@ -584,69 +509,22 @@
                 <p class="font-playfair italic text-gray-600 text-lg mt-1">The living lineage behind TablaGyan</p>
                 <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mt-3 rounded-full"></div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-cream-100 rounded-2xl p-5 gold-border-glow text-center card-lift cursor-pointer"
-                    onclick="openGuruModal(0)">
-                    <div
-                        class="w-28 h-28 mx-auto rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
-                            alt="Pt. Ramswaroop" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <h3 class="font-playfair font-bold text-maroon-900 mt-4">Pt. Ramswaroop Sharma</h3>
-                    <p class="text-xs text-gold-600 font-semibold mt-1">Farrukhabad Gharana</p>
-                    <p class="text-[11px] text-gray-500 mt-2">Senior Guru &amp; Founder</p>
-                </div>
-                <div class="bg-cream-100 rounded-2xl p-5 gold-border-glow text-center card-lift cursor-pointer"
-                    onclick="openGuruModal(1)">
-                    <div
-                        class="w-28 h-28 mx-auto rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
-                            alt="Ust. Altaf Khan" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <h3 class="font-playfair font-bold text-maroon-900 mt-4">Ustad Altaf Khan</h3>
-                    <p class="text-xs text-gold-600 font-semibold mt-1">Punjab Gharana</p>
-                    <p class="text-[11px] text-gray-500 mt-2">Guest Maestro</p>
-                </div>
-                <div class="bg-cream-100 rounded-2xl p-5 gold-border-glow text-center card-lift cursor-pointer"
-                    onclick="openGuruModal(2)">
-                    <div
-                        class="w-28 h-28 mx-auto rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80"
-                            alt="Vid. Suresh Kumar" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <h3 class="font-playfair font-bold text-maroon-900 mt-4">Vidwan Suresh Kumar</h3>
-                    <p class="text-xs text-gold-600 font-semibold mt-1">Delhi Gharana</p>
-                    <p class="text-[11px] text-gray-500 mt-2">Resident Faculty</p>
-                </div>
-                <div class="bg-cream-100 rounded-2xl p-5 gold-border-glow text-center card-lift cursor-pointer"
-                    onclick="openGuruModal(3)">
-                    <div
-                        class="w-28 h-28 mx-auto rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
-                            alt="Smt. Meenakshi Rao" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <h3 class="font-playfair font-bold text-maroon-900 mt-4">Smt. Meenakshi Rao</h3>
-                    <p class="text-xs text-gold-600 font-semibold mt-1">Ajrada Gharana</p>
-                    <p class="text-[11px] text-gray-500 mt-2">Vocal &amp; Percussion Guide</p>
-                </div>
-            </div>
+            <!-- Filled dynamically from GURUS data in script.js -->
+            <div id="gurus-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto"></div>
         </section>
 
         <!-- SCHEDULE -->
         <section id="schedule" class="space-y-8 reveal">
             <div class="text-center">
                 <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-maroon-900">EVENT SCHEDULE</h2>
-                <p class="font-playfair italic text-gray-600 text-lg mt-1">Sunday, 22 November 2026 · Shivananda
-                    Cultural Auditorium, Bengaluru</p>
+                <p class="font-playfair italic text-gray-600 text-lg mt-1">12 December 2026 · 3:00 PM · Patthi
+                    Sabhangana, Bengaluru</p>
                 <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mt-3 rounded-full"></div>
             </div>
             <div class="max-w-3xl mx-auto space-y-4">
                 <div
                     class="flex flex-col sm:flex-row items-start sm:items-center bg-cream-100 p-5 rounded-xl gold-border-glow hover:border-gold-500 transition-all card-lift">
-                    <div
-                        class="sm:w-36 flex-shrink-0 font-mono font-bold text-maroon-900 text-sm bg-gold-300/30 px-3 py-1.5 rounded-md text-center mb-2 sm:mb-0">
-                        05:00 PM</div>
-                    <div class="sm:ml-6 flex-grow">
+                    <div class="flex-grow">
                         <h3 class="font-cinzel font-bold text-lg text-maroon-900">Deep Prajwalan &amp; Vandana</h3>
                         <p class="text-xs text-gray-600 mt-0.5">Ceremonial lamp lighting and invocational shlokas by
                             senior students.</p>
@@ -656,10 +534,7 @@
                 </div>
                 <div
                     class="flex flex-col sm:flex-row items-start sm:items-center bg-cream-100 p-5 rounded-xl gold-border-glow hover:border-gold-500 transition-all card-lift">
-                    <div
-                        class="sm:w-36 flex-shrink-0 font-mono font-bold text-maroon-900 text-sm bg-gold-300/30 px-3 py-1.5 rounded-md text-center mb-2 sm:mb-0">
-                        05:45 PM</div>
-                    <div class="sm:ml-6 flex-grow">
+                    <div class="flex-grow">
                         <h3 class="font-cinzel font-bold text-lg text-maroon-900">Student Solo Recitals</h3>
                         <p class="text-xs text-gray-600 mt-0.5">TablaGyan disciples present solo compositions in
                             Teental, Jhaptal and Rupak.</p>
@@ -669,10 +544,7 @@
                 </div>
                 <div
                     class="flex flex-col sm:flex-row items-start sm:items-center bg-cream-100 p-5 rounded-xl gold-border-glow hover:border-gold-500 transition-all card-lift">
-                    <div
-                        class="sm:w-36 flex-shrink-0 font-mono font-bold text-maroon-900 text-sm bg-gold-300/30 px-3 py-1.5 rounded-md text-center mb-2 sm:mb-0">
-                        07:15 PM</div>
-                    <div class="sm:ml-6 flex-grow">
+                    <div class="flex-grow">
                         <h3 class="font-cinzel font-bold text-lg text-maroon-900">Guru Samman &amp; Felicitation</h3>
                         <p class="text-xs text-gray-600 mt-0.5">Honoring our Gurus for their lifelong contribution to
                             classical music.</p>
@@ -682,10 +554,7 @@
                 </div>
                 <div
                     class="flex flex-col sm:flex-row items-start sm:items-center bg-cream-100 p-5 rounded-xl gold-border-glow hover:border-gold-500 transition-all card-lift">
-                    <div
-                        class="sm:w-36 flex-shrink-0 font-mono font-bold text-maroon-900 text-sm bg-gold-300/30 px-3 py-1.5 rounded-md text-center mb-2 sm:mb-0">
-                        08:15 PM</div>
-                    <div class="sm:ml-6 flex-grow">
+                    <div class="flex-grow">
                         <h3 class="font-cinzel font-bold text-lg text-maroon-900">Grand Maestro Jugalbandi</h3>
                         <p class="text-xs text-gray-600 mt-0.5">Headline ensemble with senior tabla maestros, sarangi
                             and harmonium.</p>
@@ -699,50 +568,19 @@
         <!-- GALLERY -->
         <section id="gallery" class="space-y-6 reveal">
             <div class="text-center">
-                <h2 class="font-cinzel text-3xl font-extrabold text-maroon-900">FULL EVENT GALLERY</h2>
-                <p class="text-xs text-gray-600 mt-1">Moments from previous GuruVandan celebrations</p>
+                <h2 class="font-cinzel text-3xl font-extrabold text-maroon-900">EVENT GALLERY</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mt-3 rounded-full"></div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="relative group aspect-square rounded-xl overflow-hidden shadow-md cursor-pointer card-lift"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80')">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
-                        alt="Stage Setup"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-maroon-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3 text-white">
-                        <span class="font-cinzel text-xs font-bold text-gold-300">Stage Setup</span>
-                    </div>
+            <div class="max-w-xl mx-auto bg-cream-100 rounded-2xl p-10 gold-border-glow text-center">
+                <div class="w-20 h-20 mx-auto rounded-full bg-maroon-900/10 flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-images text-gold-500 text-3xl"></i>
                 </div>
-                <div class="relative group aspect-square rounded-xl overflow-hidden shadow-md cursor-pointer card-lift"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80')">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80"
-                        alt="Tabla Solo"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-maroon-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3 text-white">
-                        <span class="font-cinzel text-xs font-bold text-gold-300">Tabla Solo</span>
-                    </div>
-                </div>
-                <div class="relative group aspect-square rounded-xl overflow-hidden shadow-md cursor-pointer card-lift"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80')">
-                    <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=600&q=80"
-                        alt="Group Ensemble"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-maroon-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3 text-white">
-                        <span class="font-cinzel text-xs font-bold text-gold-300">Group Ensemble</span>
-                    </div>
-                </div>
-                <div class="relative group aspect-square rounded-xl overflow-hidden shadow-md cursor-pointer card-lift"
-                    onclick="openLightbox('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80')">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
-                        alt="Gurus Felicitation"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-maroon-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3 text-white">
-                        <span class="font-cinzel text-xs font-bold text-gold-300">Gurus Felicitation</span>
-                    </div>
-                </div>
+                <p class="font-playfair text-maroon-900 text-xl leading-relaxed">
+                    Photos will be posted after the event
+                </p>
+                <p class="text-sm text-gray-500 mt-3">
+                    Check back soon for moments from GuruVandan 2026
+                </p>
             </div>
         </section>
     </main>
@@ -762,16 +600,30 @@
                 </div>
                 <div>
                     <h4 class="font-cinzel font-bold text-gold-300 text-sm mb-3">EVENT LOCATION</h4>
-                    <p class="text-xs text-cream-200 space-y-1">
-                        <i class="fa-solid fa-location-dot text-gold-400 mr-2"></i> Shivananda Cultural Auditorium<br>
-                        <span class="pl-5">Bengaluru, Karnataka, India</span>
-                    </p>
-                    <p class="text-xs text-cream-200 mt-2">
-                        <i class="fa-solid fa-envelope text-gold-400 mr-2"></i> events@tablagyan.com
-                    </p>
-                    <p class="text-xs text-cream-200 mt-1">
-                        <i class="fa-solid fa-calendar text-gold-400 mr-2"></i> 22 November 2026 · 5:00 PM
-                    </p>
+                    <div class="flex items-start gap-4">
+                        <div class="min-w-0">
+                            <p class="text-xs text-cream-200 space-y-1">
+                                <i class="fa-solid fa-location-dot text-gold-400 mr-2"></i> Patthi Sabhangana<br>
+                                <span class="pl-5 block">1st Main Rd, NR Colony, Basavanagudi, Bengaluru, Karnataka
+                                    560004</span>
+                            </p>
+                            <p class="text-xs text-cream-200 mt-2">
+                                <i class="fa-solid fa-envelope text-gold-400 mr-2"></i> events@tablagyan.com
+                            </p>
+                            <p class="text-xs text-cream-200 mt-1">
+                                <i class="fa-solid fa-calendar text-gold-400 mr-2"></i> 12 December 2026 · 3:00 PM
+                            </p>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Patthi+Sabhangana%2C+1st+Main+Rd%2C+NR+Colony%2C+Basavanagudi%2C+Bengaluru%2C+Karnataka+560004"
+                            target="_blank" rel="noopener" class="flex-shrink-0 text-center group"
+                            aria-label="Open Patthi Sabhangana in Google Maps">
+                            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPHN2ZyB3aWR0aD0iNTFtbSIgaGVpZ2h0PSI1MW1tIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MSA1MSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSwxSDJWMkgxek0yLDFIM1YySDJ6TTMsMUg0VjJIM3pNNCwxSDVWMkg0ek01LDFINlYySDV6TTYsMUg3VjJINnpNNywxSDhWMkg3ek05LDFIMTBWMkg5ek0xMiwxSDEzVjJIMTJ6TTE3LDFIMThWMkgxN3pNMTksMUgyMFYySDE5ek0yMCwxSDIxVjJIMjB6TTIxLDFIMjJWMkgyMXpNMjIsMUgyM1YySDIyek0yNiwxSDI3VjJIMjZ6TTI3LDFIMjhWMkgyN3pNMzEsMUgzMlYySDMxek0zNCwxSDM1VjJIMzR6TTQxLDFINDJWMkg0MXpNNDMsMUg0NFYySDQzek00NCwxSDQ1VjJINDR6TTQ1LDFINDZWMkg0NXpNNDYsMUg0N1YySDQ2ek00NywxSDQ4VjJINDd6TTQ4LDFINDlWMkg0OHpNNDksMUg1MFYySDQ5ek0xLDJIMlYzSDF6TTcsMkg4VjNIN3pNMTMsMkgxNFYzSDEzek0xNCwySDE1VjNIMTR6TTE1LDJIMTZWM0gxNXpNMjMsMkgyNFYzSDIzek0yNSwySDI2VjNIMjV6TTI2LDJIMjdWM0gyNnpNMjcsMkgyOFYzSDI3ek0yOCwySDI5VjNIMjh6TTMwLDJIMzFWM0gzMHpNMzIsMkgzM1YzSDMyek0zNSwySDM2VjNIMzV6TTM2LDJIMzdWM0gzNnpNMzksMkg0MFYzSDM5ek00MCwySDQxVjNINDB6TTQxLDJINDJWM0g0MXpNNDMsMkg0NFYzSDQzek00OSwySDUwVjNINDl6TTEsM0gyVjRIMXpNMywzSDRWNEgzek00LDNINVY0SDR6TTUsM0g2VjRINXpNNywzSDhWNEg3ek0xMCwzSDExVjRIMTB6TTExLDNIMTJWNEgxMXpNMTcsM0gxOFY0SDE3ek0xOSwzSDIwVjRIMTl6TTIwLDNIMjFWNEgyMHpNMjIsM0gyM1Y0SDIyek0yMywzSDI0VjRIMjN6TTI2LDNIMjdWNEgyNnpNMjcsM0gyOFY0SDI3ek0yOCwzSDI5VjRIMjh6TTMxLDNIMzJWNEgzMXpNMzUsM0gzNlY0SDM1ek0zNiwzSDM3VjRIMzZ6TTM3LDNIMzhWNEgzN3pNNDAsM0g0MVY0SDQwek00MSwzSDQyVjRINDF6TTQzLDNINDRWNEg0M3pNNDUsM0g0NlY0SDQ1ek00NiwzSDQ3VjRINDZ6TTQ3LDNINDhWNEg0N3pNNDksM0g1MFY0SDQ5ek0xLDRIMlY1SDF6TTMsNEg0VjVIM3pNNCw0SDVWNUg0ek01LDRINlY1SDV6TTcsNEg4VjVIN3pNOSw0SDEwVjVIOXpNMTAsNEgxMVY1SDEwek0xMyw0SDE0VjVIMTN6TTE0LDRIMTVWNUgxNHpNMTUsNEgxNlY1SDE1ek0xNiw0SDE3VjVIMTZ6TTE4LDRIMTlWNUgxOHpNMjAsNEgyMVY1SDIwek0yMyw0SDI0VjVIMjN6TTI0LDRIMjVWNUgyNHpNMjYsNEgyN1Y1SDI2ek0yNyw0SDI4VjVIMjd6TTI5LDRIMzBWNUgyOXpNMzIsNEgzM1Y1SDMyek0zOCw0SDM5VjVIMzh6TTQwLDRINDFWNUg0MHpNNDMsNEg0NFY1SDQzek00NSw0SDQ2VjVINDV6TTQ2LDRINDdWNUg0NnpNNDcsNEg0OFY1SDQ3ek00OSw0SDUwVjVINDl6TTEsNUgyVjZIMXpNMyw1SDRWNkgzek00LDVINVY2SDR6TTUsNUg2VjZINXpNNyw1SDhWNkg3ek05LDVIMTBWNkg5ek0xMCw1SDExVjZIMTB6TTEzLDVIMTRWNkgxM3pNMTYsNUgxN1Y2SDE2ek0xOCw1SDE5VjZIMTh6TTIwLDVIMjFWNkgyMHpNMjEsNUgyMlY2SDIxek0yMyw1SDI0VjZIMjN6TTI0LDVIMjVWNkgyNHpNMjUsNUgyNlY2SDI1ek0yNiw1SDI3VjZIMjZ6TTI3LDVIMjhWNkgyN3pNMjgsNUgyOVY2SDI4ek0zMSw1SDMyVjZIMzF6TTM0LDVIMzVWNkgzNHpNMzYsNUgzN1Y2SDM2ek00Myw1SDQ0VjZINDN6TTQ1LDVINDZWNkg0NXpNNDYsNUg0N1Y2SDQ2ek00Nyw1SDQ4VjZINDd6TTQ5LDVINTBWNkg0OXpNMSw2SDJWN0gxek03LDZIOFY3SDd6TTksNkgxMFY3SDl6TTEzLDZIMTRWN0gxM3pNMTYsNkgxN1Y3SDE2ek0xNyw2SDE4VjdIMTd6TTE4LDZIMTlWN0gxOHpNMTksNkgyMFY3SDE5ek0yMSw2SDIyVjdIMjF6TTIyLDZIMjNWN0gyMnpNMjMsNkgyNFY3SDIzek0yNyw2SDI4VjdIMjd6TTMyLDZIMzNWN0gzMnpNMzUsNkgzNlY3SDM1ek0zNiw2SDM3VjdIMzZ6TTM5LDZINDBWN0gzOXpNNDMsNkg0NFY3SDQzek00OSw2SDUwVjdINDl6TTEsN0gyVjhIMXpNMiw3SDNWOEgyek0zLDdINFY4SDN6TTQsN0g1VjhINHpNNSw3SDZWOEg1ek02LDdIN1Y4SDZ6TTcsN0g4VjhIN3pNOSw3SDEwVjhIOXpNMTEsN0gxMlY4SDExek0xMyw3SDE0VjhIMTN6TTE1LDdIMTZWOEgxNXpNMTcsN0gxOFY4SDE3ek0xOSw3SDIwVjhIMTl6TTIxLDdIMjJWOEgyMXpNMjMsN0gyNFY4SDIzek0yNSw3SDI2VjhIMjV6TTI3LDdIMjhWOEgyN3pNMjksN0gzMFY4SDI5ek0zMSw3SDMyVjhIMzF6TTMzLDdIMzRWOEgzM3pNMzUsN0gzNlY4SDM1ek0zNyw3SDM4VjhIMzd6TTM5LDdINDBWOEgzOXpNNDEsN0g0MlY4SDQxek00Myw3SDQ0VjhINDN6TTQ0LDdINDVWOEg0NHpNNDUsN0g0NlY4SDQ1ek00Niw3SDQ3VjhINDZ6TTQ3LDdINDhWOEg0N3pNNDgsN0g0OVY4SDQ4ek00OSw3SDUwVjhINDl6TTksOEgxMFY5SDl6TTEwLDhIMTFWOUgxMHpNMTEsOEgxMlY5SDExek0xMiw4SDEzVjlIMTJ6TTE1LDhIMTZWOUgxNXpNMTgsOEgxOVY5SDE4ek0xOSw4SDIwVjlIMTl6TTIzLDhIMjRWOUgyM3pNMjcsOEgyOFY5SDI3ek0yOCw4SDI5VjlIMjh6TTMwLDhIMzFWOUgzMHpNMzMsOEgzNFY5SDMzek0zNCw4SDM1VjlIMzR6TTM2LDhIMzdWOUgzNnpNMzcsOEgzOFY5SDM3ek0zOCw4SDM5VjlIMzh6TTM5LDhINDBWOUgzOXpNNDEsOEg0MlY5SDQxek0xLDlIMlYxMEgxek01LDlINlYxMEg1ek03LDlIOFYxMEg3ek04LDlIOVYxMEg4ek05LDlIMTBWMTBIOXpNMTAsOUgxMVYxMEgxMHpNMTEsOUgxMlYxMEgxMXpNMTQsOUgxNVYxMEgxNHpNMTksOUgyMFYxMEgxOXpNMjAsOUgyMVYxMEgyMHpNMjEsOUgyMlYxMEgyMXpNMjIsOUgyM1YxMEgyMnpNMjMsOUgyNFYxMEgyM3pNMjQsOUgyNVYxMEgyNHpNMjUsOUgyNlYxMEgyNXpNMjYsOUgyN1YxMEgyNnpNMjcsOUgyOFYxMEgyN3pNMzAsOUgzMVYxMEgzMHpNMzEsOUgzMlYxMEgzMXpNMzMsOUgzNFYxMEgzM3pNMzQsOUgzNVYxMEgzNHpNMzYsOUgzN1YxMEgzNnpNMzcsOUgzOFYxMEgzN3pNMzksOUg0MFYxMEgzOXpNNDIsOUg0M1YxMEg0MnpNNDMsOUg0NFYxMEg0M3pNNDQsOUg0NVYxMEg0NHpNNDUsOUg0NlYxMEg0NXpNNDYsOUg0N1YxMEg0NnpNNDksOUg1MFYxMEg0OXpNMiwxMEgzVjExSDJ6TTMsMTBINFYxMUgzek00LDEwSDVWMTFINHpNOCwxMEg5VjExSDh6TTExLDEwSDEyVjExSDExek0xNiwxMEgxN1YxMUgxNnpNMTksMTBIMjBWMTFIMTl6TTIxLDEwSDIyVjExSDIxek0yMiwxMEgyM1YxMUgyMnpNMjQsMTBIMjVWMTFIMjR6TTI1LDEwSDI2VjExSDI1ek0yNywxMEgyOFYxMUgyN3pNMjgsMTBIMjlWMTFIMjh6TTMwLDEwSDMxVjExSDMwek0zMSwxMEgzMlYxMUgzMXpNMzIsMTBIMzNWMTFIMzJ6TTMzLDEwSDM0VjExSDMzek0zNywxMEgzOFYxMUgzN3pNMzksMTBINDBWMTFIMzl6TTQwLDEwSDQxVjExSDQwek00MiwxMEg0M1YxMUg0MnpNNDMsMTBINDRWMTFINDN6TTQ1LDEwSDQ2VjExSDQ1ek00NiwxMEg0N1YxMUg0NnpNNDcsMTBINDhWMTFINDd6TTQ4LDEwSDQ5VjExSDQ4ek0xLDExSDJWMTJIMXpNMywxMUg0VjEySDN6TTUsMTFINlYxMkg1ek02LDExSDdWMTJINnpNNywxMUg4VjEySDd6TTgsMTFIOVYxMkg4ek05LDExSDEwVjEySDl6TTEyLDExSDEzVjEySDEyek0xMywxMUgxNFYxMkgxM3pNMTUsMTFIMTZWMTJIMTV6TTE2LDExSDE3VjEySDE2ek0xOSwxMUgyMFYxMkgxOXpNMjAsMTFIMjFWMTJIMjB6TTIxLDExSDIyVjEySDIxek0yMiwxMUgyM1YxMkgyMnpNMjMsMTFIMjRWMTJIMjN6TTI0LDExSDI1VjEySDI0ek0yNiwxMUgyN1YxMkgyNnpNMjcsMTFIMjhWMTJIMjd6TTI4LDExSDI5VjEySDI4ek0yOSwxMUgzMFYxMkgyOXpNMzAsMTFIMzFWMTJIMzB6TTMxLDExSDMyVjEySDMxek0zMywxMUgzNFYxMkgzM3pNMzQsMTFIMzVWMTJIMzR6TTM2LDExSDM3VjEySDM2ek0zNywxMUgzOFYxMkgzN3pNMzgsMTFIMzlWMTJIMzh6TTQwLDExSDQxVjEySDQwek00MywxMUg0NFYxMkg0M3pNNDQsMTFINDVWMTJINDR6TTQ2LDExSDQ3VjEySDQ2ek00OCwxMUg0OVYxMkg0OHpNMiwxMkgzVjEzSDJ6TTQsMTJINVYxM0g0ek04LDEySDlWMTNIOHpNMTAsMTJIMTFWMTNIMTB6TTEyLDEySDEzVjEzSDEyek0xMywxMkgxNFYxM0gxM3pNMTQsMTJIMTVWMTNIMTR6TTE1LDEySDE2VjEzSDE1ek0xOCwxMkgxOVYxM0gxOHpNMjEsMTJIMjJWMTNIMjF6TTIzLDEySDI0VjEzSDIzek0yNCwxMkgyNVYxM0gyNHpNMjUsMTJIMjZWMTNIMjV6TTI2LDEySDI3VjEzSDI2ek0yOCwxMkgyOVYxM0gyOHpNMzAsMTJIMzFWMTNIMzB6TTMzLDEySDM0VjEzSDMzek0zNiwxMkgzN1YxM0gzNnpNMzcsMTJIMzhWMTNIMzd6TTQwLDEySDQxVjEzSDQwek00MSwxMkg0MlYxM0g0MXpNNDIsMTJINDNWMTNINDJ6TTQzLDEySDQ0VjEzSDQzek00NCwxMkg0NVYxM0g0NHpNNDUsMTJINDZWMTNINDV6TTQ2LDEySDQ3VjEzSDQ2ek00NywxMkg0OFYxM0g0N3pNNiwxM0g3VjE0SDZ6TTcsMTNIOFYxNEg3ek05LDEzSDEwVjE0SDl6TTEwLDEzSDExVjE0SDEwek0xMSwxM0gxMlYxNEgxMXpNMTIsMTNIMTNWMTRIMTJ6TTEzLDEzSDE0VjE0SDEzek0xNCwxM0gxNVYxNEgxNHpNMTYsMTNIMTdWMTRIMTZ6TTE4LDEzSDE5VjE0SDE4ek0xOSwxM0gyMFYxNEgxOXpNMjAsMTNIMjFWMTRIMjB6TTIxLDEzSDIyVjE0SDIxek0yMywxM0gyNFYxNEgyM3pNMjQsMTNIMjVWMTRIMjR6TTI1LDEzSDI2VjE0SDI1ek0yNywxM0gyOFYxNEgyN3pNMzMsMTNIMzRWMTRIMzN6TTM1LDEzSDM2VjE0SDM1ek0zNiwxM0gzN1YxNEgzNnpNMzcsMTNIMzhWMTRIMzd6TTM4LDEzSDM5VjE0SDM4ek00MCwxM0g0MVYxNEg0MHpNNDQsMTNINDVWMTRINDR6TTQ1LDEzSDQ2VjE0SDQ1ek00NywxM0g0OFYxNEg0N3pNMSwxNEgyVjE1SDF6TTYsMTRIN1YxNUg2ek04LDE0SDlWMTVIOHpNMTEsMTRIMTJWMTVIMTF6TTE1LDE0SDE2VjE1SDE1ek0xNiwxNEgxN1YxNUgxNnpNMjIsMTRIMjNWMTVIMjJ6TTIzLDE0SDI0VjE1SDIzek0yNCwxNEgyNVYxNUgyNHpNMjUsMTRIMjZWMTVIMjV6TTI2LDE0SDI3VjE1SDI2ek0yNywxNEgyOFYxNUgyN3pNMjgsMTRIMjlWMTVIMjh6TTI5LDE0SDMwVjE1SDI5ek0zMCwxNEgzMVYxNUgzMHpNMzEsMTRIMzJWMTVIMzF6TTM0LDE0SDM1VjE1SDM0ek0zNiwxNEgzN1YxNUgzNnpNMzgsMTRIMzlWMTVIMzh6TTM5LDE0SDQwVjE1SDM5ek00MCwxNEg0MVYxNUg0MHpNNDMsMTRINDRWMTVINDN6TTQ1LDE0SDQ2VjE1SDQ1ek00NiwxNEg0N1YxNUg0NnpNNDcsMTRINDhWMTVINDd6TTQ4LDE0SDQ5VjE1SDQ4ek0yLDE1SDNWMTZIMnpNMywxNUg0VjE2SDN6TTUsMTVINlYxNkg1ek02LDE1SDdWMTZINnpNNywxNUg4VjE2SDd6TTgsMTVIOVYxNkg4ek05LDE1SDEwVjE2SDl6TTEwLDE1SDExVjE2SDEwek0xMSwxNUgxMlYxNkgxMXpNMTQsMTVIMTVWMTZIMTR6TTE1LDE1SDE2VjE2SDE1ek0xNiwxNUgxN1YxNkgxNnpNMTcsMTVIMThWMTZIMTd6TTE5LDE1SDIwVjE2SDE5ek0yMSwxNUgyMlYxNkgyMXpNMjIsMTVIMjNWMTZIMjJ6TTI2LDE1SDI3VjE2SDI2ek0yNywxNUgyOFYxNkgyN3pNMjgsMTVIMjlWMTZIMjh6TTI5LDE1SDMwVjE2SDI5ek0zMCwxNUgzMVYxNkgzMHpNMzEsMTVIMzJWMTZIMzF6TTMyLDE1SDMzVjE2SDMyek0zMywxNUgzNFYxNkgzM3pNMzcsMTVIMzhWMTZIMzd6TTM5LDE1SDQwVjE2SDM5ek00MCwxNUg0MVYxNkg0MHpNNDIsMTVINDNWMTZINDJ6TTQzLDE1SDQ0VjE2SDQzek00NCwxNUg0NVYxNkg0NHpNNDYsMTVINDdWMTZINDZ6TTEsMTZIMlYxN0gxek0zLDE2SDRWMTdIM3pNNCwxNkg1VjE3SDR6TTYsMTZIN1YxN0g2ek0xOSwxNkgyMFYxN0gxOXpNMjAsMTZIMjFWMTdIMjB6TTIxLDE2SDIyVjE3SDIxek0yNSwxNkgyNlYxN0gyNXpNMjYsMTZIMjdWMTdIMjZ6TTI3LDE2SDI4VjE3SDI3ek0zMywxNkgzNFYxN0gzM3pNMzQsMTZIMzVWMTdIMzR6TTM1LDE2SDM2VjE3SDM1ek0zNiwxNkgzN1YxN0gzNnpNMzcsMTZIMzhWMTdIMzd6TTQ0LDE2SDQ1VjE3SDQ0ek00NSwxNkg0NlYxN0g0NXpNNDcsMTZINDhWMTdINDd6TTQ4LDE2SDQ5VjE3SDQ4ek0yLDE3SDNWMThIMnpNMywxN0g0VjE4SDN6TTQsMTdINVYxOEg0ek01LDE3SDZWMThINXpNNywxN0g4VjE4SDd6TTksMTdIMTBWMThIOXpNMTIsMTdIMTNWMThIMTJ6TTEzLDE3SDE0VjE4SDEzek0xNSwxN0gxNlYxOEgxNXpNMTYsMTdIMTdWMThIMTZ6TTE3LDE3SDE4VjE4SDE3ek0xOCwxN0gxOVYxOEgxOHpNMjAsMTdIMjFWMThIMjB6TTI1LDE3SDI2VjE4SDI1ek0yNiwxN0gyN1YxOEgyNnpNMzAsMTdIMzFWMThIMzB6TTMxLDE3SDMyVjE4SDMxek0zMiwxN0gzM1YxOEgzMnpNMzMsMTdIMzRWMThIMzN6TTM0LDE3SDM1VjE4SDM0ek0zNiwxN0gzN1YxOEgzNnpNMzcsMTdIMzhWMThIMzd6TTQwLDE3SDQxVjE4SDQwek00MSwxN0g0MlYxOEg0MXpNNDIsMTdINDNWMThINDJ6TTQzLDE3SDQ0VjE4SDQzek00NSwxN0g0NlYxOEg0NXpNNDcsMTdINDhWMThINDd6TTMsMThINFYxOUgzek01LDE4SDZWMTlINXpNOSwxOEgxMFYxOUg5ek0xMCwxOEgxMVYxOUgxMHpNMTMsMThIMTRWMTlIMTN6TTE2LDE4SDE3VjE5SDE2ek0xNywxOEgxOFYxOUgxN3pNMTgsMThIMTlWMTlIMTh6TTIwLDE4SDIxVjE5SDIwek0yMSwxOEgyMlYxOUgyMXpNMjQsMThIMjVWMTlIMjR6TTI3LDE4SDI4VjE5SDI3ek0zMSwxOEgzMlYxOUgzMXpNMzMsMThIMzRWMTlIMzN6TTM0LDE4SDM1VjE5SDM0ek0zOCwxOEgzOVYxOUgzOHpNMzksMThINDBWMTlIMzl6TTQyLDE4SDQzVjE5SDQyek00MywxOEg0NFYxOUg0M3pNNDUsMThINDZWMTlINDV6TTQ2LDE4SDQ3VjE5SDQ2ek0xLDE5SDJWMjBIMXpNMiwxOUgzVjIwSDJ6TTQsMTlINVYyMEg0ek03LDE5SDhWMjBIN3pNOCwxOUg5VjIwSDh6TTksMTlIMTBWMjBIOXpNMTAsMTlIMTFWMjBIMTB6TTE0LDE5SDE1VjIwSDE0ek0xOSwxOUgyMFYyMEgxOXpNMjAsMTlIMjFWMjBIMjB6TTIxLDE5SDIyVjIwSDIxek0yNCwxOUgyNVYyMEgyNHpNMjUsMTlIMjZWMjBIMjV6TTI3LDE5SDI4VjIwSDI3ek0yOCwxOUgyOVYyMEgyOHpNMjksMTlIMzBWMjBIMjl6TTMxLDE5SDMyVjIwSDMxek0zNiwxOUgzN1YyMEgzNnpNMzksMTlINDBWMjBIMzl6TTQxLDE5SDQyVjIwSDQxek00MiwxOUg0M1YyMEg0MnpNNDMsMTlINDRWMjBINDN6TTQ2LDE5SDQ3VjIwSDQ2ek00NywxOUg0OFYyMEg0N3pNMiwyMEgzVjIxSDJ6TTMsMjBINFYyMUgzek00LDIwSDVWMjFINHpNNiwyMEg3VjIxSDZ6TTgsMjBIOVYyMUg4ek05LDIwSDEwVjIxSDl6TTEwLDIwSDExVjIxSDEwek0xMSwyMEgxMlYyMUgxMXpNMTMsMjBIMTRWMjFIMTN6TTE0LDIwSDE1VjIxSDE0ek0xNSwyMEgxNlYyMUgxNXpNMTYsMjBIMTdWMjFIMTZ6TTE3LDIwSDE4VjIxSDE3ek0xOSwyMEgyMFYyMUgxOXpNMjMsMjBIMjRWMjFIMjN6TTI1LDIwSDI2VjIxSDI1ek0yNiwyMEgyN1YyMUgyNnpNMjcsMjBIMjhWMjFIMjd6TTI4LDIwSDI5VjIxSDI4ek0zMSwyMEgzMlYyMUgzMXpNMzMsMjBIMzRWMjFIMzN6TTM2LDIwSDM3VjIxSDM2ek0zNywyMEgzOFYyMUgzN3pNMzgsMjBIMzlWMjFIMzh6TTQwLDIwSDQxVjIxSDQwek00MiwyMEg0M1YyMUg0MnpNNDQsMjBINDVWMjFINDR6TTQ1LDIwSDQ2VjIxSDQ1ek00NywyMEg0OFYyMUg0N3pNMiwyMUgzVjIySDJ6TTUsMjFINlYyMkg1ek03LDIxSDhWMjJIN3pNMTAsMjFIMTFWMjJIMTB6TTExLDIxSDEyVjIySDExek0xMiwyMUgxM1YyMkgxMnpNMTMsMjFIMTRWMjJIMTN6TTE3LDIxSDE4VjIySDE3ek0yMCwyMUgyMVYyMkgyMHpNMjMsMjFIMjRWMjJIMjN6TTI0LDIxSDI1VjIySDI0ek0yNSwyMUgyNlYyMkgyNXpNMjYsMjFIMjdWMjJIMjZ6TTI4LDIxSDI5VjIySDI4ek0zMCwyMUgzMVYyMkgzMHpNMzIsMjFIMzNWMjJIMzJ6TTMzLDIxSDM0VjIySDMzek0zNiwyMUgzN1YyMkgzNnpNMzcsMjFIMzhWMjJIMzd6TTQwLDIxSDQxVjIySDQwek00MSwyMUg0MlYyMkg0MXpNNDQsMjFINDVWMjJINDR6TTQ1LDIxSDQ2VjIySDQ1ek00NiwyMUg0N1YyMkg0NnpNNDcsMjFINDhWMjJINDd6TTQ4LDIxSDQ5VjIySDQ4ek00OSwyMUg1MFYyMkg0OXpNMSwyMkgyVjIzSDF6TTIsMjJIM1YyM0gyek00LDIySDVWMjNINHpNNSwyMkg2VjIzSDV6TTEzLDIySDE0VjIzSDEzek0xOSwyMkgyMFYyM0gxOXpNMjEsMjJIMjJWMjNIMjF6TTI0LDIySDI1VjIzSDI0ek0yNSwyMkgyNlYyM0gyNXpNMjksMjJIMzBWMjNIMjl6TTMwLDIySDMxVjIzSDMwek0zMSwyMkgzMlYyM0gzMXpNMzQsMjJIMzVWMjNIMzR6TTM3LDIySDM4VjIzSDM3ek0zOCwyMkgzOVYyM0gzOHpNMzksMjJINDBWMjNIMzl6TTQwLDIySDQxVjIzSDQwek00MiwyMkg0M1YyM0g0MnpNNDMsMjJINDRWMjNINDN6TTQ2LDIySDQ3VjIzSDQ2ek00NywyMkg0OFYyM0g0N3pNNSwyM0g2VjI0SDV6TTYsMjNIN1YyNEg2ek03LDIzSDhWMjRIN3pNOCwyM0g5VjI0SDh6TTksMjNIMTBWMjRIOXpNMTAsMjNIMTFWMjRIMTB6TTE3LDIzSDE4VjI0SDE3ek0xOCwyM0gxOVYyNEgxOHpNMTksMjNIMjBWMjRIMTl6TTIwLDIzSDIxVjI0SDIwek0yMywyM0gyNFYyNEgyM3pNMjQsMjNIMjVWMjRIMjR6TTI1LDIzSDI2VjI0SDI1ek0yNiwyM0gyN1YyNEgyNnpNMjcsMjNIMjhWMjRIMjd6TTI5LDIzSDMwVjI0SDI5ek0zMCwyM0gzMVYyNEgzMHpNMzEsMjNIMzJWMjRIMzF6TTM0LDIzSDM1VjI0SDM0ek0zNywyM0gzOFYyNEgzN3pNMzksMjNINDBWMjRIMzl6TTQxLDIzSDQyVjI0SDQxek00MiwyM0g0M1YyNEg0MnpNNDMsMjNINDRWMjRINDN6TTQ0LDIzSDQ1VjI0SDQ0ek00NSwyM0g0NlYyNEg0NXpNNDcsMjNINDhWMjRINDd6TTIsMjRIM1YyNUgyek0zLDI0SDRWMjVIM3pNNCwyNEg1VjI1SDR6TTUsMjRINlYyNUg1ek05LDI0SDEwVjI1SDl6TTExLDI0SDEyVjI1SDExek0xMywyNEgxNFYyNUgxM3pNMTQsMjRIMTVWMjVIMTR6TTE1LDI0SDE2VjI1SDE1ek0xNywyNEgxOFYyNUgxN3pNMjAsMjRIMjFWMjVIMjB6TTIxLDI0SDIyVjI1SDIxek0yMywyNEgyNFYyNUgyM3pNMjcsMjRIMjhWMjVIMjd6TTI4LDI0SDI5VjI1SDI4ek0zMSwyNEgzMlYyNUgzMXpNMzMsMjRIMzRWMjVIMzN6TTM0LDI0SDM1VjI1SDM0ek0zNiwyNEgzN1YyNUgzNnpNMzcsMjRIMzhWMjVIMzd6TTQxLDI0SDQyVjI1SDQxek00NSwyNEg0NlYyNUg0NXpNNDYsMjRINDdWMjVINDZ6TTQ3LDI0SDQ4VjI1SDQ3ek0xLDI1SDJWMjZIMXpNMywyNUg0VjI2SDN6TTUsMjVINlYyNkg1ek03LDI1SDhWMjZIN3pNOSwyNUgxMFYyNkg5ek0xMCwyNUgxMVYyNkgxMHpNMTEsMjVIMTJWMjZIMTF6TTEzLDI1SDE0VjI2SDEzek0xNSwyNUgxNlYyNkgxNXpNMTYsMjVIMTdWMjZIMTZ6TTE5LDI1SDIwVjI2SDE5ek0yMCwyNUgyMVYyNkgyMHpNMjMsMjVIMjRWMjZIMjN6TTI1LDI1SDI2VjI2SDI1ek0yNywyNUgyOFYyNkgyN3pNMjgsMjVIMjlWMjZIMjh6TTMzLDI1SDM0VjI2SDMzek0zNCwyNUgzNVYyNkgzNHpNMzUsMjVIMzZWMjZIMzV6TTM2LDI1SDM3VjI2SDM2ek0zNywyNUgzOFYyNkgzN3pNMzgsMjVIMzlWMjZIMzh6TTM5LDI1SDQwVjI2SDM5ek00MCwyNUg0MVYyNkg0MHpNNDEsMjVINDJWMjZINDF6TTQzLDI1SDQ0VjI2SDQzek00NSwyNUg0NlYyNkg0NXpNNDYsMjVINDdWMjZINDZ6TTQ3LDI1SDQ4VjI2SDQ3ek00LDI2SDVWMjdINHpNNSwyNkg2VjI3SDV6TTksMjZIMTBWMjdIOXpNMTAsMjZIMTFWMjdIMTB6TTExLDI2SDEyVjI3SDExek0xMiwyNkgxM1YyN0gxMnpNMTQsMjZIMTVWMjdIMTR6TTE2LDI2SDE3VjI3SDE2ek0xOCwyNkgxOVYyN0gxOHpNMjEsMjZIMjJWMjdIMjF6TTIyLDI2SDIzVjI3SDIyek0yMywyNkgyNFYyN0gyM3pNMjcsMjZIMjhWMjdIMjd6TTI5LDI2SDMwVjI3SDI5ek0zMCwyNkgzMVYyN0gzMHpNMzEsMjZIMzJWMjdIMzF6TTMyLDI2SDMzVjI3SDMyek0zNCwyNkgzNVYyN0gzNHpNMzcsMjZIMzhWMjdIMzd6TTM5LDI2SDQwVjI3SDM5ek00MSwyNkg0MlYyN0g0MXpNNDUsMjZINDZWMjdINDV6TTQ3LDI2SDQ4VjI3SDQ3ek0zLDI3SDRWMjhIM3pNNCwyN0g1VjI4SDR6TTUsMjdINlYyOEg1ek02LDI3SDdWMjhINnpNNywyN0g4VjI4SDd6TTgsMjdIOVYyOEg4ek05LDI3SDEwVjI4SDl6TTEyLDI3SDEzVjI4SDEyek0xNCwyN0gxNVYyOEgxNHpNMTUsMjdIMTZWMjhIMTV6TTE3LDI3SDE4VjI4SDE3ek0xOCwyN0gxOVYyOEgxOHpNMTksMjdIMjBWMjhIMTl6TTIwLDI3SDIxVjI4SDIwek0yMSwyN0gyMlYyOEgyMXpNMjMsMjdIMjRWMjhIMjN6TTI0LDI3SDI1VjI4SDI0ek0yNSwyN0gyNlYyOEgyNXpNMjYsMjdIMjdWMjhIMjZ6TTI3LDI3SDI4VjI4SDI3ek0zMCwyN0gzMVYyOEgzMHpNMzEsMjdIMzJWMjhIMzF6TTM1LDI3SDM2VjI4SDM1ek0zOSwyN0g0MFYyOEgzOXpNNDEsMjdINDJWMjhINDF6TTQyLDI3SDQzVjI4SDQyek00MywyN0g0NFYyOEg0M3pNNDQsMjdINDVWMjhINDR6TTQ1LDI3SDQ2VjI4SDQ1ek0yLDI4SDNWMjlIMnpNMywyOEg0VjI5SDN6TTQsMjhINVYyOUg0ek01LDI4SDZWMjlINXpNNiwyOEg3VjI5SDZ6TTgsMjhIOVYyOUg4ek05LDI4SDEwVjI5SDl6TTEyLDI4SDEzVjI5SDEyek0xMywyOEgxNFYyOUgxM3pNMTQsMjhIMTVWMjlIMTR6TTE3LDI4SDE4VjI5SDE3ek0xOCwyOEgxOVYyOUgxOHpNMTksMjhIMjBWMjlIMTl6TTIwLDI4SDIxVjI5SDIwek0yMSwyOEgyMlYyOUgyMXpNMjQsMjhIMjVWMjlIMjR6TTMwLDI4SDMxVjI5SDMwek0zMywyOEgzNFYyOUgzM3pNMzQsMjhIMzVWMjlIMzR6TTM2LDI4SDM3VjI5SDM2ek0zNywyOEgzOFYyOUgzN3pNMzksMjhINDBWMjlIMzl6TTQxLDI4SDQyVjI5SDQxek00MiwyOEg0M1YyOUg0MnpNNDcsMjhINDhWMjlINDd6TTQ4LDI4SDQ5VjI5SDQ4ek0xLDI5SDJWMzBIMXpNNCwyOUg1VjMwSDR6TTYsMjlIN1YzMEg2ek03LDI5SDhWMzBIN3pNOCwyOUg5VjMwSDh6TTEwLDI5SDExVjMwSDEwek0xMSwyOUgxMlYzMEgxMXpNMTMsMjlIMTRWMzBIMTN6TTE0LDI5SDE1VjMwSDE0ek0xNSwyOUgxNlYzMEgxNXpNMTYsMjlIMTdWMzBIMTZ6TTE3LDI5SDE4VjMwSDE3ek0xOSwyOUgyMFYzMEgxOXpNMjEsMjlIMjJWMzBIMjF6TTI1LDI5SDI2VjMwSDI1ek0yNiwyOUgyN1YzMEgyNnpNMjcsMjlIMjhWMzBIMjd6TTI4LDI5SDI5VjMwSDI4ek0zMCwyOUgzMVYzMEgzMHpNMzEsMjlIMzJWMzBIMzF6TTMzLDI5SDM0VjMwSDMzek0zNCwyOUgzNVYzMEgzNHpNMzYsMjlIMzdWMzBIMzZ6TTM3LDI5SDM4VjMwSDM3ek00MSwyOUg0MlYzMEg0MXpNNDMsMjlINDRWMzBINDN6TTQ2LDI5SDQ3VjMwSDQ2ek00OSwyOUg1MFYzMEg0OXpNMywzMEg0VjMxSDN6TTUsMzBINlYzMUg1ek04LDMwSDlWMzFIOHpNMTEsMzBIMTJWMzFIMTF6TTEyLDMwSDEzVjMxSDEyek0xMywzMEgxNFYzMUgxM3pNMTQsMzBIMTVWMzFIMTR6TTE1LDMwSDE2VjMxSDE1ek0xNiwzMEgxN1YzMUgxNnpNMjAsMzBIMjFWMzFIMjB6TTIxLDMwSDIyVjMxSDIxek0yMywzMEgyNFYzMUgyM3pNMjQsMzBIMjVWMzFIMjR6TTMwLDMwSDMxVjMxSDMwek0zMSwzMEgzMlYzMUgzMXpNMzYsMzBIMzdWMzFIMzZ6TTM5LDMwSDQwVjMxSDM5ek00MSwzMEg0MlYzMUg0MXpNNDUsMzBINDZWMzFINDV6TTQ2LDMwSDQ3VjMxSDQ2ek0xLDMxSDJWMzJIMXpNNCwzMUg1VjMySDR6TTYsMzFIN1YzMkg2ek03LDMxSDhWMzJIN3pNOCwzMUg5VjMySDh6TTksMzFIMTBWMzJIOXpNMTAsMzFIMTFWMzJIMTB6TTExLDMxSDEyVjMySDExek0xNCwzMUgxNVYzMkgxNHpNMTgsMzFIMTlWMzJIMTh6TTIwLDMxSDIxVjMySDIwek0yMywzMUgyNFYzMkgyM3pNMjQsMzFIMjVWMzJIMjR6TTI1LDMxSDI2VjMySDI1ek0yNiwzMUgyN1YzMkgyNnpNMjgsMzFIMjlWMzJIMjh6TTI5LDMxSDMwVjMySDI5ek0zMSwzMUgzMlYzMkgzMXpNMzQsMzFIMzVWMzJIMzR6TTM3LDMxSDM4VjMySDM3ek00MCwzMUg0MVYzMkg0MHpNNDEsMzFINDJWMzJINDF6TTEsMzJIMlYzM0gxek0yLDMySDNWMzNIMnpNNiwzMkg3VjMzSDZ6TTExLDMySDEyVjMzSDExek0xMiwzMkgxM1YzM0gxMnpNMTMsMzJIMTRWMzNIMTN6TTE0LDMySDE1VjMzSDE0ek0xNSwzMkgxNlYzM0gxNXpNMTYsMzJIMTdWMzNIMTZ6TTE3LDMySDE4VjMzSDE3ek0xOCwzMkgxOVYzM0gxOHpNMTksMzJIMjBWMzNIMTl6TTIyLDMySDIzVjMzSDIyek0yMywzMkgyNFYzM0gyM3pNMjUsMzJIMjZWMzNIMjV6TTI3LDMySDI4VjMzSDI3ek0zMywzMkgzNFYzM0gzM3pNMzUsMzJIMzZWMzNIMzV6TTM3LDMySDM4VjMzSDM3ek0zOSwzMkg0MFYzM0gzOXpNNDAsMzJINDFWMzNINDB6TTQzLDMySDQ0VjMzSDQzek00NCwzMkg0NVYzM0g0NHpNNDUsMzJINDZWMzNINDV6TTQ3LDMySDQ4VjMzSDQ3ek00OCwzMkg0OVYzM0g0OHpNNDksMzJINTBWMzNINDl6TTEsMzNIMlYzNEgxek0zLDMzSDRWMzRIM3pNNCwzM0g1VjM0SDR6TTUsMzNINlYzNEg1ek03LDMzSDhWMzRIN3pNOSwzM0gxMFYzNEg5ek0xMCwzM0gxMVYzNEgxMHpNMTEsMzNIMTJWMzRIMTF6TTEzLDMzSDE0VjM0SDEzek0xNCwzM0gxNVYzNEgxNHpNMTcsMzNIMThWMzRIMTd6TTE5LDMzSDIwVjM0SDE5ek0yMCwzM0gyMVYzNEgyMHpNMjEsMzNIMjJWMzRIMjF6TTI0LDMzSDI1VjM0SDI0ek0yNiwzM0gyN1YzNEgyNnpNMjcsMzNIMjhWMzRIMjd6TTMzLDMzSDM0VjM0SDMzek0zNiwzM0gzN1YzNEgzNnpNMzcsMzNIMzhWMzRIMzd6TTQxLDMzSDQyVjM0SDQxek00MiwzM0g0M1YzNEg0MnpNNDQsMzNINDVWMzRINDR6TTQ3LDMzSDQ4VjM0SDQ3ek00OCwzM0g0OVYzNEg0OHpNMiwzNEgzVjM1SDJ6TTYsMzRIN1YzNUg2ek05LDM0SDEwVjM1SDl6TTEwLDM0SDExVjM1SDEwek0xNCwzNEgxNVYzNUgxNHpNMTUsMzRIMTZWMzVIMTV6TTE4LDM0SDE5VjM1SDE4ek0xOSwzNEgyMFYzNUgxOXpNMjEsMzRIMjJWMzVIMjF6TTIzLDM0SDI0VjM1SDIzek0yNCwzNEgyNVYzNUgyNHpNMjUsMzRIMjZWMzVIMjV6TTI2LDM0SDI3VjM1SDI2ek0zMSwzNEgzMlYzNUgzMXpNMzQsMzRIMzVWMzVIMzR6TTM2LDM0SDM3VjM1SDM2ek0zNywzNEgzOFYzNUgzN3pNMzksMzRINDBWMzVIMzl6TTQwLDM0SDQxVjM1SDQwek00MiwzNEg0M1YzNUg0MnpNNDQsMzRINDVWMzVINDR6TTQ1LDM0SDQ2VjM1SDQ1ek00NiwzNEg0N1YzNUg0NnpNMywzNUg0VjM2SDN6TTQsMzVINVYzNkg0ek03LDM1SDhWMzZIN3pNOCwzNUg5VjM2SDh6TTksMzVIMTBWMzZIOXpNMTEsMzVIMTJWMzZIMTF6TTE0LDM1SDE1VjM2SDE0ek0xNywzNUgxOFYzNkgxN3pNMTgsMzVIMTlWMzZIMTh6TTIxLDM1SDIyVjM2SDIxek0yMiwzNUgyM1YzNkgyMnpNMjMsMzVIMjRWMzZIMjN6TTI1LDM1SDI2VjM2SDI1ek0yNiwzNUgyN1YzNkgyNnpNMjgsMzVIMjlWMzZIMjh6TTI5LDM1SDMwVjM2SDI5ek0zMSwzNUgzMlYzNkgzMXpNMzMsMzVIMzRWMzZIMzN6TTM0LDM1SDM1VjM2SDM0ek0zNiwzNUgzN1YzNkgzNnpNNDIsMzVINDNWMzZINDJ6TTQ2LDM1SDQ3VjM2SDQ2ek00NywzNUg0OFYzNkg0N3pNMSwzNkgyVjM3SDF6TTUsMzZINlYzN0g1ek05LDM2SDEwVjM3SDl6TTExLDM2SDEyVjM3SDExek0xMiwzNkgxM1YzN0gxMnpNMTMsMzZIMTRWMzdIMTN6TTE1LDM2SDE2VjM3SDE1ek0xNywzNkgxOFYzN0gxN3pNMzEsMzZIMzJWMzdIMzF6TTM1LDM2SDM2VjM3SDM1ek0zNiwzNkgzN1YzN0gzNnpNMzcsMzZIMzhWMzdIMzd6TTM4LDM2SDM5VjM3SDM4ek0zOSwzNkg0MFYzN0gzOXpNNDIsMzZINDNWMzdINDJ6TTQzLDM2SDQ0VjM3SDQzek00NCwzNkg0NVYzN0g0NHpNNDcsMzZINDhWMzdINDd6TTQ4LDM2SDQ5VjM3SDQ4ek00OSwzNkg1MFYzN0g0OXpNMywzN0g0VjM4SDN6TTQsMzdINVYzOEg0ek02LDM3SDdWMzhINnpNNywzN0g4VjM4SDd6TTgsMzdIOVYzOEg4ek0xMSwzN0gxMlYzOEgxMXpNMTIsMzdIMTNWMzhIMTJ6TTEzLDM3SDE0VjM4SDEzek0xNCwzN0gxNVYzOEgxNHpNMTksMzdIMjBWMzhIMTl6TTIwLDM3SDIxVjM4SDIwek0yMSwzN0gyMlYzOEgyMXpNMjYsMzdIMjdWMzhIMjZ6TTI3LDM3SDI4VjM4SDI3ek0yOCwzN0gyOVYzOEgyOHpNMzAsMzdIMzFWMzhIMzB6TTMxLDM3SDMyVjM4SDMxek0zMywzN0gzNFYzOEgzM3pNMzQsMzdIMzVWMzhIMzR6TTM2LDM3SDM3VjM4SDM2ek0zNywzN0gzOFYzOEgzN3pNMzgsMzdIMzlWMzhIMzh6TTQyLDM3SDQzVjM4SDQyek00MywzN0g0NFYzOEg0M3pNNDYsMzdINDdWMzhINDZ6TTQ3LDM3SDQ4VjM4SDQ3ek00OSwzN0g1MFYzOEg0OXpNMiwzOEgzVjM5SDJ6TTQsMzhINVYzOUg0ek01LDM4SDZWMzlINXpNOSwzOEgxMFYzOUg5ek0xMCwzOEgxMVYzOUgxMHpNMTEsMzhIMTJWMzlIMTF6TTE0LDM4SDE1VjM5SDE0ek0xNSwzOEgxNlYzOUgxNXpNMTgsMzhIMTlWMzlIMTh6TTIxLDM4SDIyVjM5SDIxek0yNSwzOEgyNlYzOUgyNXpNMjcsMzhIMjhWMzlIMjd6TTI4LDM4SDI5VjM5SDI4ek0zMCwzOEgzMVYzOUgzMHpNMzEsMzhIMzJWMzlIMzF6TTMyLDM4SDMzVjM5SDMyek0zNiwzOEgzN1YzOUgzNnpNMzksMzhINDBWMzlIMzl6TTQwLDM4SDQxVjM5SDQwek00MiwzOEg0M1YzOUg0MnpNNDMsMzhINDRWMzlINDN6TTQ1LDM4SDQ2VjM5SDQ1ek0yLDM5SDNWNDBIMnpNNiwzOUg3VjQwSDZ6TTcsMzlIOFY0MEg3ek0xMSwzOUgxMlY0MEgxMXpNMTMsMzlIMTRWNDBIMTN6TTE0LDM5SDE1VjQwSDE0ek0xNSwzOUgxNlY0MEgxNXpNMTYsMzlIMTdWNDBIMTZ6TTE3LDM5SDE4VjQwSDE3ek0xOCwzOUgxOVY0MEgxOHpNMTksMzlIMjBWNDBIMTl6TTIwLDM5SDIxVjQwSDIwek0yMSwzOUgyMlY0MEgyMXpNMjMsMzlIMjRWNDBIMjN6TTI1LDM5SDI2VjQwSDI1ek0yNiwzOUgyN1Y0MEgyNnpNMjgsMzlIMjlWNDBIMjh6TTI5LDM5SDMwVjQwSDI5ek0zMCwzOUgzMVY0MEgzMHpNMzEsMzlIMzJWNDBIMzF6TTM0LDM5SDM1VjQwSDM0ek0zNywzOUgzOFY0MEgzN3pNMzksMzlINDBWNDBIMzl6TTQwLDM5SDQxVjQwSDQwek00NSwzOUg0NlY0MEg0NXpNNDcsMzlINDhWNDBINDd6TTIsNDBIM1Y0MUgyek0zLDQwSDRWNDFIM3pNNCw0MEg1VjQxSDR6TTksNDBIMTBWNDFIOXpNMTEsNDBIMTJWNDFIMTF6TTE0LDQwSDE1VjQxSDE0ek0xNyw0MEgxOFY0MUgxN3pNMjEsNDBIMjJWNDFIMjF6TTIyLDQwSDIzVjQxSDIyek0yMyw0MEgyNFY0MUgyM3pNMjQsNDBIMjVWNDFIMjR6TTI3LDQwSDI4VjQxSDI3ek0yOCw0MEgyOVY0MUgyOHpNMzMsNDBIMzRWNDFIMzN6TTM0LDQwSDM1VjQxSDM0ek0zNSw0MEgzNlY0MUgzNXpNMzcsNDBIMzhWNDFIMzd6TTQzLDQwSDQ0VjQxSDQzek00NCw0MEg0NVY0MUg0NHpNNDYsNDBINDdWNDFINDZ6TTQ3LDQwSDQ4VjQxSDQ3ek0xLDQxSDJWNDJIMXpNMiw0MUgzVjQySDJ6TTMsNDFINFY0Mkgzek03LDQxSDhWNDJIN3pNOCw0MUg5VjQySDh6TTEyLDQxSDEzVjQySDEyek0xMyw0MUgxNFY0MkgxM3pNMTYsNDFIMTdWNDJIMTZ6TTIyLDQxSDIzVjQySDIyek0yMyw0MUgyNFY0MkgyM3pNMjQsNDFIMjVWNDJIMjR6TTI1LDQxSDI2VjQySDI1ek0yNiw0MUgyN1Y0MkgyNnpNMjcsNDFIMjhWNDJIMjd6TTI4LDQxSDI5VjQySDI4ek0zMCw0MUgzMVY0MkgzMHpNMzMsNDFIMzRWNDJIMzN6TTM0LDQxSDM1VjQySDM0ek0zNSw0MUgzNlY0MkgzNXpNMzYsNDFIMzdWNDJIMzZ6TTM3LDQxSDM4VjQySDM3ek0zOSw0MUg0MFY0MkgzOXpNNDEsNDFINDJWNDJINDF6TTQyLDQxSDQzVjQySDQyek00Myw0MUg0NFY0Mkg0M3pNNDQsNDFINDVWNDJINDR6TTQ1LDQxSDQ2VjQySDQ1ek00Nyw0MUg0OFY0Mkg0N3pNNDksNDFINTBWNDJINDl6TTksNDJIMTBWNDNIOXpNMTEsNDJIMTJWNDNIMTF6TTEyLDQySDEzVjQzSDEyek0xNSw0MkgxNlY0M0gxNXpNMTYsNDJIMTdWNDNIMTZ6TTE3LDQySDE4VjQzSDE3ek0xOSw0MkgyMFY0M0gxOXpNMjAsNDJIMjFWNDNIMjB6TTIxLDQySDIyVjQzSDIxek0yMyw0MkgyNFY0M0gyM3pNMjcsNDJIMjhWNDNIMjd6TTI4LDQySDI5VjQzSDI4ek0zMCw0MkgzMVY0M0gzMHpNMzEsNDJIMzJWNDNIMzF6TTMzLDQySDM0VjQzSDMzek0zNCw0MkgzNVY0M0gzNHpNMzcsNDJIMzhWNDNIMzd6TTM5LDQySDQwVjQzSDM5ek00MCw0Mkg0MVY0M0g0MHpNNDEsNDJINDJWNDNINDF6TTQ1LDQySDQ2VjQzSDQ1ek00OCw0Mkg0OVY0M0g0OHpNMSw0M0gyVjQ0SDF6TTIsNDNIM1Y0NEgyek0zLDQzSDRWNDRIM3pNNCw0M0g1VjQ0SDR6TTUsNDNINlY0NEg1ek02LDQzSDdWNDRINnpNNyw0M0g4VjQ0SDd6TTksNDNIMTBWNDRIOXpNMTAsNDNIMTFWNDRIMTB6TTExLDQzSDEyVjQ0SDExek0xNiw0M0gxN1Y0NEgxNnpNMTcsNDNIMThWNDRIMTd6TTIwLDQzSDIxVjQ0SDIwek0yMSw0M0gyMlY0NEgyMXpNMjIsNDNIMjNWNDRIMjJ6TTIzLDQzSDI0VjQ0SDIzek0yNSw0M0gyNlY0NEgyNXpNMjcsNDNIMjhWNDRIMjd6TTI4LDQzSDI5VjQ0SDI4ek0yOSw0M0gzMFY0NEgyOXpNMzAsNDNIMzFWNDRIMzB6TTMxLDQzSDMyVjQ0SDMxek0zNCw0M0gzNVY0NEgzNHpNMzgsNDNIMzlWNDRIMzh6TTM5LDQzSDQwVjQ0SDM5ek00MSw0M0g0MlY0NEg0MXpNNDMsNDNINDRWNDRINDN6TTQ1LDQzSDQ2VjQ0SDQ1ek00Niw0M0g0N1Y0NEg0NnpNMSw0NEgyVjQ1SDF6TTcsNDRIOFY0NUg3ek0xMCw0NEgxMVY0NUgxMHpNMTMsNDRIMTRWNDVIMTN6TTE2LDQ0SDE3VjQ1SDE2ek0xNyw0NEgxOFY0NUgxN3pNMTgsNDRIMTlWNDVIMTh6TTE5LDQ0SDIwVjQ1SDE5ek0yMCw0NEgyMVY0NUgyMHpNMjEsNDRIMjJWNDVIMjF6TTIyLDQ0SDIzVjQ1SDIyek0yMyw0NEgyNFY0NUgyM3pNMjcsNDRIMjhWNDVIMjd6TTMwLDQ0SDMxVjQ1SDMwek0zMyw0NEgzNFY0NUgzM3pNMzUsNDRIMzZWNDVIMzV6TTM2LDQ0SDM3VjQ1SDM2ek0zNyw0NEgzOFY0NUgzN3pNNDEsNDRINDJWNDVINDF6TTQ1LDQ0SDQ2VjQ1SDQ1ek00Nyw0NEg0OFY0NUg0N3pNMSw0NUgyVjQ2SDF6TTMsNDVINFY0Nkgzek00LDQ1SDVWNDZINHpNNSw0NUg2VjQ2SDV6TTcsNDVIOFY0Nkg3ek05LDQ1SDEwVjQ2SDl6TTE1LDQ1SDE2VjQ2SDE1ek0yMCw0NUgyMVY0NkgyMHpNMjEsNDVIMjJWNDZIMjF6TTIzLDQ1SDI0VjQ2SDIzek0yNCw0NUgyNVY0NkgyNHpNMjUsNDVIMjZWNDZIMjV6TTI2LDQ1SDI3VjQ2SDI2ek0yNyw0NUgyOFY0NkgyN3pNMjgsNDVIMjlWNDZIMjh6TTMwLDQ1SDMxVjQ2SDMwek0zMyw0NUgzNFY0NkgzM3pNMzQsNDVIMzVWNDZIMzR6TTM2LDQ1SDM3VjQ2SDM2ek0zNyw0NUgzOFY0NkgzN3pNNDAsNDVINDFWNDZINDB6TTQxLDQ1SDQyVjQ2SDQxek00Miw0NUg0M1Y0Nkg0MnpNNDMsNDVINDRWNDZINDN6TTQ0LDQ1SDQ1VjQ2SDQ0ek00NSw0NUg0NlY0Nkg0NXpNNDcsNDVINDhWNDZINDd6TTQ5LDQ1SDUwVjQ2SDQ5ek0xLDQ2SDJWNDdIMXpNMyw0Nkg0VjQ3SDN6TTQsNDZINVY0N0g0ek01LDQ2SDZWNDdINXpNNyw0Nkg4VjQ3SDd6TTEwLDQ2SDExVjQ3SDEwek0xMiw0NkgxM1Y0N0gxMnpNMTYsNDZIMTdWNDdIMTZ6TTE3LDQ2SDE4VjQ3SDE3ek0xOCw0NkgxOVY0N0gxOHpNMTksNDZIMjBWNDdIMTl6TTIzLDQ2SDI0VjQ3SDIzek0yNiw0NkgyN1Y0N0gyNnpNMjcsNDZIMjhWNDdIMjd6TTI4LDQ2SDI5VjQ3SDI4ek0zMCw0NkgzMVY0N0gzMHpNMzEsNDZIMzJWNDdIMzF6TTMyLDQ2SDMzVjQ3SDMyek0zNiw0NkgzN1Y0N0gzNnpNMzksNDZINDBWNDdIMzl6TTQxLDQ2SDQyVjQ3SDQxek00Myw0Nkg0NFY0N0g0M3pNNDksNDZINTBWNDdINDl6TTEsNDdIMlY0OEgxek0zLDQ3SDRWNDhIM3pNNCw0N0g1VjQ4SDR6TTUsNDdINlY0OEg1ek03LDQ3SDhWNDhIN3pNMTEsNDdIMTJWNDhIMTF6TTEyLDQ3SDEzVjQ4SDEyek0xMyw0N0gxNFY0OEgxM3pNMTQsNDdIMTVWNDhIMTR6TTE2LDQ3SDE3VjQ4SDE2ek0xNyw0N0gxOFY0OEgxN3pNMjEsNDdIMjJWNDhIMjF6TTIzLDQ3SDI0VjQ4SDIzek0yNiw0N0gyN1Y0OEgyNnpNMjgsNDdIMjlWNDhIMjh6TTI5LDQ3SDMwVjQ4SDI5ek0zMCw0N0gzMVY0OEgzMHpNMzEsNDdIMzJWNDhIMzF6TTMyLDQ3SDMzVjQ4SDMyek0zMyw0N0gzNFY0OEgzM3pNMzksNDdINDBWNDhIMzl6TTQwLDQ3SDQxVjQ4SDQwek00MSw0N0g0MlY0OEg0MXpNNDMsNDdINDRWNDhINDN6TTQ0LDQ3SDQ1VjQ4SDQ0ek00Nyw0N0g0OFY0OEg0N3pNNDgsNDdINDlWNDhINDh6TTQ5LDQ3SDUwVjQ4SDQ5ek0xLDQ4SDJWNDlIMXpNNyw0OEg4VjQ5SDd6TTExLDQ4SDEyVjQ5SDExek0xMiw0OEgxM1Y0OUgxMnpNMTMsNDhIMTRWNDlIMTN6TTE3LDQ4SDE4VjQ5SDE3ek0xOCw0OEgxOVY0OUgxOHpNMTksNDhIMjBWNDlIMTl6TTIwLDQ4SDIxVjQ5SDIwek0yMSw0OEgyMlY0OUgyMXpNMjMsNDhIMjRWNDlIMjN6TTMwLDQ4SDMxVjQ5SDMwek0zMyw0OEgzNFY0OUgzM3pNMzQsNDhIMzVWNDlIMzR6TTM1LDQ4SDM2VjQ5SDM1ek0zNiw0OEgzN1Y0OUgzNnpNMzcsNDhIMzhWNDlIMzd6TTM5LDQ4SDQwVjQ5SDM5ek00MSw0OEg0MlY0OUg0MXpNNDIsNDhINDNWNDlINDJ6TTQ3LDQ4SDQ4VjQ5SDQ3ek00OCw0OEg0OVY0OUg0OHpNMSw0OUgyVjUwSDF6TTIsNDlIM1Y1MEgyek0zLDQ5SDRWNTBIM3pNNCw0OUg1VjUwSDR6TTUsNDlINlY1MEg1ek02LDQ5SDdWNTBINnpNNyw0OUg4VjUwSDd6TTksNDlIMTBWNTBIOXpNMTUsNDlIMTZWNTBIMTV6TTE3LDQ5SDE4VjUwSDE3ek0xOCw0OUgxOVY1MEgxOHpNMTksNDlIMjBWNTBIMTl6TTI0LDQ5SDI1VjUwSDI0ek0yNSw0OUgyNlY1MEgyNXpNMjcsNDlIMjhWNTBIMjd6TTMxLDQ5SDMyVjUwSDMxek0zMyw0OUgzNFY1MEgzM3pNMzQsNDlIMzVWNTBIMzR6TTM2LDQ5SDM3VjUwSDM2ek0zNyw0OUgzOFY1MEgzN3pNNDAsNDlINDFWNTBINDB6TTQ0LDQ5SDQ1VjUwSDQ0ek00NSw0OUg0NlY1MEg0NXpNNDcsNDlINDhWNTBINDd6TTQ4LDQ5SDQ5VjUwSDQ4ek00OSw0OUg1MFY1MEg0OXoiIGlkPSJxci1wYXRoIiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIi8+PC9zdmc+"
+                                alt="QR code for venue location on Google Maps"
+                                class="w-24 h-24 bg-white p-1.5 rounded-lg border-2 border-gold-500/60 shadow-md group-hover:scale-105 transition-transform">
+                            <span class="block text-[9px] tracking-widest uppercase text-gold-300 mt-1">Scan for
+                                Map</span>
+                        </a>
+                    </div>
                 </div>
                 <div>
                     <h4 class="font-cinzel font-bold text-gold-300 text-sm mb-3">CONNECT WITH US</h4>
@@ -781,17 +633,17 @@
                             aria-label="Website">
                             <i class="fa-solid fa-globe"></i>
                         </a>
-                        <a href="#"
+                        <a href="https://www.youtube.com/@tablagyanacademyofmusic"
                             class="w-9 h-9 rounded-full bg-maroon-950 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-900 transition-colors"
                             aria-label="YouTube">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
-                        <a href="#"
+                        <a href="https://instagram.com/tablagyan.official"
                             class="w-9 h-9 rounded-full bg-maroon-950 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-900 transition-colors"
                             aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="#"
+                        <a href="https://www.facebook.com/tabla.gyan"
                             class="w-9 h-9 rounded-full bg-maroon-950 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-900 transition-colors"
                             aria-label="Facebook">
                             <i class="fa-brands fa-facebook-f"></i>
@@ -822,6 +674,10 @@
             <!-- filled by JS -->
         </div>
     </div>
+
+    <!-- Optional: drop your own looping track next to index.html as bg-music.mp3.
+         If the file is missing, a soft synthesized tanpura-style drone plays instead. -->
+    <audio id="bg-audio" src="https://tablagyan.com/static/audio/tabla-bg.mp3" loop preload="none"></audio>
 
     <script src="script.js"></script>
 </body>
