@@ -3,8 +3,8 @@
    Human-crafted interactions & micro-animations
    ========================================================= */
 
-// ---------- 1. FIXED EVENT DATE (22 Nov 2026, 5:00 PM IST) ----------
-const EVENT_DATE = new Date('2026-11-22T17:00:00+05:30').getTime();
+// ---------- 1. FIXED EVENT DATE (12 Dec 2026, 3:00 PM IST) ----------
+const EVENT_DATE = new Date('2026-12-12T15:00:00+05:30').getTime();
 
 function updateCountdown() {
     const now = Date.now();
@@ -131,27 +131,69 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// ---------- 5. GURU MODAL ----------
+// ---------- 5. GURU DATA (single source of truth) ----------
 const GURUS = [
     {
-        name: "Pt. Ramswaroop Sharma",
-        gharana: "Farrukhabad Gharana",
-        title: "Senior Guru & Founder, TablaGyan",
-        img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+        name: "Shri Dilip Puranik",
+        shortName: "Shri Dilip Puranik",
+        gharana: "Tabla",
+        title: "Tabla Guru & Founder, TablaGyan",
+        img: "https://tablagyan.com/static/images/tabla-professor-2.jpeg",
         bio: "With more than four decades of dedicated practice and teaching, Panditji has shaped hundreds of young hands into confident tabla artists. His approach blends rigorous traditional training with gentle encouragement — the true spirit of the guru-shishya parampara.",
         specialty: "Kayda, Rela & rare Bandishes of Farrukhabad"
     },
     {
-        name: "Ustad Altaf Khan",
-        gharana: "Punjab Gharana",
-        title: "Guest Maestro",
-        img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+        name: "Smt. Sneha Pathak",
+        shortName: "Smt. Sneha Pathak",
+        gharana: "Vocals",
+        title: "Vocals Guru",
+        img: "https://tablagyan.com/static/images/sneha-pathak.jpeg",
         bio: "A torchbearer of the Punjab gharana’s fiery energy, Ustadji is known for lightning-fast relas and deeply emotional peshkars. Students wait all year for the rare chance to sit in his masterclass during GuruVandan.",
         specialty: "Peshkar, Gat & high-speed improvisation"
-    },
-
+    }
 ];
 
+// ---------- 5a. RENDER GURUS INTO HTML CONTAINERS ----------
+function renderGurus() {
+    const meetGrid = document.getElementById('meet-gurus-grid');
+    const fullGrid = document.getElementById('gurus-grid');
+
+    if (meetGrid) {
+        meetGrid.innerHTML = GURUS.map((g, i) => `
+            <div class="flex flex-col items-center group cursor-pointer" onclick="openGuruModal(${i})">
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="${g.img}" alt="${g.name}" class="w-full h-full object-cover rounded-full"
+                         onerror="this.src='https://placehold.co/200x200/58111A/D4AF37?text=Guru'">
+                </div>
+                <h3 class="font-playfair font-bold text-maroon-900 text-sm text-center mt-3 group-hover:text-gold-600 transition-colors">${g.shortName}</h3>
+                <p class="text-[10px] text-gray-600 text-center">${g.gharana}</p>
+            </div>
+        `).join('');
+    }
+
+    if (fullGrid) {
+        fullGrid.innerHTML = GURUS.map((g, i) => `
+            <div class="bg-cream-100 rounded-2xl p-6 gold-border-glow text-center card-lift cursor-pointer" onclick="openGuruModal(${i})">
+                <div class="w-32 h-32 mx-auto rounded-full p-1.5 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md">
+                    <img src="${g.img}" alt="${g.name}" class="w-full h-full object-cover rounded-full"
+                         onerror="this.src='https://placehold.co/300x300/58111A/D4AF37?text=Guru'">
+                </div>
+                <h3 class="font-playfair font-bold text-maroon-900 text-lg mt-4">${g.name}</h3>
+                <p class="text-xs text-gold-600 font-semibold mt-1">${g.gharana}</p>
+                <p class="text-[11px] text-gray-500 mt-2">${g.title}</p>
+            </div>
+        `).join('');
+    }
+}
+
+// Run as soon as DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderGurus);
+} else {
+    renderGurus();
+}
+
+// ---------- 5b. GURU MODAL ----------
 function openGuruModal(index) {
     const g = GURUS[index];
     if (!g) return;
@@ -217,6 +259,7 @@ window.closeGuruModal = closeGuruModal;
 document.getElementById('guru-modal')?.addEventListener('click', (e) => {
     if (e.target.id === 'guru-modal') closeGuruModal();
 });
+
 
 // ---------- 6. SCROLL REVEAL ----------
 const revealObserver = new IntersectionObserver((entries) => {
@@ -307,3 +350,86 @@ document.querySelectorAll('.btn-ripple').forEach(btn => {
 });
 
 console.log('%cTablaGyan GuruVandan 2026 – crafted with reverence', 'color:#D4AF37;font-family:serif;font-size:14px;');
+
+// ---------- 12. BACKGROUND MUSIC TOGGLE ----------
+(function () {
+    const btn = document.getElementById('music-toggle');
+    const icon = document.getElementById('music-icon');
+    const label = document.getElementById('music-label');
+    const audio = document.getElementById('bg-audio');
+    if (!btn || !audio) return;
+
+    let playing = false;
+    let ctx = null, master = null, droneNodes = [];
+
+    // Soft tanpura-style drone (Pa–Sa–Sa–Sa) used when bg-music.mp3 isn't available
+    function startDrone() {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        if (!ctx) ctx = new AC();
+        if (ctx.state === 'suspended') ctx.resume();
+        master = ctx.createGain();
+        master.gain.setValueAtTime(0, ctx.currentTime);
+        master.gain.linearRampToValueAtTime(0.12, ctx.currentTime + 2);
+        master.connect(ctx.destination);
+
+        const base = 130.81; // C3
+        [base * 1.5, base * 2, base * 2, base].forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const g = ctx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.value = freq;
+            osc.detune.value = (i - 1.5) * 4;
+            const filter = ctx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.value = 900;
+            const lfo = ctx.createOscillator();
+            const lfoGain = ctx.createGain();
+            lfo.frequency.value = 0.18 + i * 0.03;
+            lfoGain.gain.value = 0.25;
+            g.gain.value = 0.35;
+            lfo.connect(lfoGain).connect(g.gain);
+            osc.connect(filter).connect(g).connect(master);
+            osc.start(); lfo.start();
+            droneNodes.push(osc, lfo);
+        });
+    }
+
+    function stopDrone() {
+        if (!ctx || !master) return;
+        const m = master, nodes = droneNodes;
+        m.gain.cancelScheduledValues(ctx.currentTime);
+        m.gain.setValueAtTime(m.gain.value, ctx.currentTime);
+        m.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.8);
+        setTimeout(() => { nodes.forEach(n => { try { n.stop(); } catch (e) { } }); m.disconnect(); }, 900);
+        droneNodes = []; master = null;
+    }
+
+    function setUI(on) {
+        icon.className = on ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+        label.textContent = on ? 'Music On' : 'Music Off';
+        btn.setAttribute('aria-pressed', String(on));
+        btn.classList.toggle('bg-maroon-800', on);
+        btn.classList.toggle('text-white', on);
+    }
+
+    async function turnOn() {
+        audio.volume = 0.35;
+        try {
+            await audio.play();
+        } catch (err) {
+            startDrone(); // mp3 missing or blocked → synthesized drone
+        }
+        playing = true;
+        setUI(true);
+    }
+
+    function turnOff() {
+        audio.pause();
+        stopDrone();
+        playing = false;
+        setUI(false);
+    }
+
+    btn.addEventListener('click', () => (playing ? turnOff() : turnOn()));
+})();
