@@ -149,7 +149,7 @@ const GURUS = [
         title: "Vocals Guru",
         img: "https://tablagyan.com/static/images/sneha-pathak.jpeg",
         bio: "Smt. Sneha Pathak is a dedicated vocals teacher at TablaGyan, originally from Maharashtra. Her musical journey is a testament to strong foundations and successful mastery of the Visharad grade in Hindustani classical music.",
-        specialty: "Peshkar, Gat & high-speed improvisation"
+        specialty: "Hindustani classical vocals · Visharad"
     }
 ];
 
