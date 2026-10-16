@@ -349,7 +349,6 @@ console.log('%cTablaGyan GuruVandana 2026 – crafted with reverence', 'color:#D
 (function () {
     const btn = document.getElementById('music-toggle');
     const icon = document.getElementById('music-icon');
-    const label = document.getElementById('music-label');
     const audio = document.getElementById('bg-audio');
     if (!btn || !audio) return;
 
@@ -400,9 +399,9 @@ console.log('%cTablaGyan GuruVandana 2026 – crafted with reverence', 'color:#D
     }
 
     function setUI(on) {
-        icon.className = on ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
-        label.textContent = on ? 'Music On' : 'Music Off';
+        if (icon) icon.className = on ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
         btn.setAttribute('aria-pressed', String(on));
+        btn.setAttribute('title', on ? 'Mute music' : 'Play music');
         btn.classList.toggle('bg-maroon-800', on);
         btn.classList.toggle('text-white', on);
     }
@@ -412,7 +411,8 @@ console.log('%cTablaGyan GuruVandana 2026 – crafted with reverence', 'color:#D
         try {
             await audio.play();
         } catch (err) {
-            startDrone(); // mp3 missing or blocked → synthesized drone
+            // File missing or autoplay blocked — try synthesized drone
+            try { startDrone(); } catch (e) { /* ignore */ }
         }
         playing = true;
         setUI(true);
@@ -420,10 +420,53 @@ console.log('%cTablaGyan GuruVandana 2026 – crafted with reverence', 'color:#D
 
     function turnOff() {
         audio.pause();
+        audio.currentTime = 0;
         stopDrone();
         playing = false;
         setUI(false);
     }
 
-    btn.addEventListener('click', () => (playing ? turnOff() : turnOn()));
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playing ? turnOff() : turnOn();
+    });
+
+    // Try to start music as soon as the page loads
+    async function tryAutoplay() {
+        audio.volume = 0.35;
+        try {
+            await audio.play();
+            playing = true;
+            setUI(true);
+            return true;
+        } catch (err) {
+            // Browser blocked autoplay with sound — start on first user gesture
+            return false;
+        }
+    }
+
+    function unlockOnGesture() {
+        if (playing) return;
+        turnOn();
+        document.removeEventListener('click', unlockOnGesture);
+        document.removeEventListener('touchstart', unlockOnGesture);
+        document.removeEventListener('keydown', unlockOnGesture);
+    }
+
+    // Attempt autoplay on load; if blocked, wait for first interaction
+    const start = () => {
+        tryAutoplay().then((ok) => {
+            if (!ok) {
+                document.addEventListener('click', unlockOnGesture, { once: true });
+                document.addEventListener('touchstart', unlockOnGesture, { once: true });
+                document.addEventListener('keydown', unlockOnGesture, { once: true });
+            }
+        });
+    };
+
+    if (document.readyState === 'complete') {
+        start();
+    } else {
+        window.addEventListener('load', start);
+    }
 })();
