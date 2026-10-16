@@ -61,6 +61,14 @@
             text-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 2px 4px rgba(0, 0, 0, 0.9);
         }
 
+        /* Solid gold hero title — avoids transparent gradient fill looking black */
+        .hero-title-gold {
+            color: #F0D060 !important;
+            -webkit-text-fill-color: #F0D060 !important;
+            background: none !important;
+            text-shadow: 0 0 28px rgba(212, 175, 55, 0.65), 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
         .hero-sub-shadow {
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
         }
@@ -236,30 +244,29 @@
                         GuruVandana</span>
                 </div>
 
-                <div class="flex items-center gap-3 xl:gap-4">
+                <div class="flex items-center gap-3 xl:gap-5">
                     <nav
-                        class="hidden xl:flex items-center gap-x-4 2xl:gap-x-5 text-[11px] 2xl:text-xs font-semibold tracking-wide uppercase font-sans whitespace-nowrap">
+                        class="hidden xl:flex items-center gap-x-5 2xl:gap-x-6 text-[11px] 2xl:text-xs font-semibold tracking-wide uppercase font-sans whitespace-nowrap">
                         <a href="#about"
-                            class="text-gold-300 hover:text-white transition-colors duration-200 px-0.5">About</a>
+                            class="text-gold-300 hover:text-white transition-colors duration-200 px-1">About</a>
                         <a href="#performances"
-                            class="text-gold-300 hover:text-white transition-colors duration-200 px-0.5">Performances</a>
+                            class="text-gold-300 hover:text-white transition-colors duration-200 px-1">Performances</a>
                         <a href="#gurus"
-                            class="text-gold-300 hover:text-white transition-colors duration-200 px-0.5">Gurus</a>
+                            class="text-gold-300 hover:text-white transition-colors duration-200 px-1">Gurus</a>
                         <a href="gallery.html"
-                            class="text-gold-300 hover:text-white transition-colors duration-200 px-0.5">Gallery</a>
+                            class="text-gold-300 hover:text-white transition-colors duration-200 px-1">Gallery</a>
                         <a href="#schedule"
-                            class="text-gold-300 hover:text-white transition-colors duration-200 px-0.5">Schedule</a>
+                            class="text-gold-300 hover:text-white transition-colors duration-200 px-1">Schedule</a>
                         <a href="#sponsorship"
-                            class="text-gold-300 hover:text-white transition-colors duration-200 px-0.5">Sponsorship</a>
+                            class="text-gold-300 hover:text-white transition-colors duration-200 px-1">Sponsorship</a>
                         <a href="#contact"
-                            class="text-gold-300 hover:text-white transition-colors duration-200 px-0.5">Contact</a>
+                            class="text-gold-300 hover:text-white transition-colors duration-200 px-1">Contact</a>
                     </nav>
 
                     <button id="music-toggle" type="button"
-                        class="flex items-center gap-2 px-3 py-2 rounded-full border border-gold-500/40 text-gold-300 hover:text-white hover:bg-maroon-800 text-xs font-semibold uppercase tracking-wider transition-all focus:outline-none"
+                        class="w-9 h-9 flex items-center justify-center rounded-full border border-gold-500/40 text-gold-300 hover:text-white hover:bg-maroon-800 transition-all focus:outline-none"
                         aria-pressed="false" aria-label="Toggle background music" title="Toggle background music">
                         <i id="music-icon" class="fa-solid fa-volume-xmark"></i>
-                        <span id="music-label" class="hidden sm:inline">Music Off</span>
                     </button>
 
                     <div class="flex xl:hidden items-center space-x-3">
@@ -274,7 +281,7 @@
         </div>
 
         <div id="mobile-menu"
-            class="hidden xl:hidden bg-maroon-950 border-b border-gold-500/30 px-4 pt-3 pb-6 space-y-3">
+            class="hidden xl:hidden bg-maroon-950 border-b border-gold-500/30 px-5 pt-4 pb-6 space-y-4">
             <div class="flex flex-col items-center py-2 mb-3 bg-maroon-900 rounded-lg border border-gold-500/30">
                 <div class="flex items-center space-x-3 text-gold-400 font-mono font-bold text-lg">
                     <span id="m-timer-days">00</span>:
@@ -328,7 +335,7 @@
 
 
             <h1
-                class="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-wider hero-title-shadow gold-gradient-text max-w-5xl">
+                class="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-wider max-w-5xl hero-title-gold">
                 TABLAGYAN GURU VANDANA
             </h1>
 

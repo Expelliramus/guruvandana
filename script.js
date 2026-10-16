@@ -1,9 +1,3 @@
-/* =========================================================
-   TablaGyan – GuruVandan 2026
-   Human-crafted interactions & micro-animations
-   ========================================================= */
-
-// ---------- 1. FIXED EVENT DATE (12 Dec 2026, 3:00 PM IST) ----------
 const EVENT_DATE = new Date('2026-12-12T15:00:00+05:30').getTime();
 
 function updateCountdown() {
@@ -162,7 +156,7 @@ function renderGurus() {
         meetGrid.innerHTML = GURUS.map((g, i) => `
             <div class="flex flex-col items-center group cursor-pointer" onclick="openGuruModal(${i})">
                 <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md group-hover:scale-105 transition-transform duration-300">
-                    <img src="${g.img}" alt="${g.name}" class="w-full h-full object-cover rounded-full"
+                    <img src="${g.img}" alt="${g.name}" class="w-full h-full object-cover object-top rounded-full"
                          onerror="this.src='https://placehold.co/200x200/58111A/D4AF37?text=Guru'">
                 </div>
                 <h3 class="font-playfair font-bold text-maroon-900 text-sm text-center mt-3 group-hover:text-gold-600 transition-colors">${g.shortName}</h3>
@@ -175,7 +169,7 @@ function renderGurus() {
         fullGrid.innerHTML = GURUS.map((g, i) => `
             <div class="bg-cream-100 rounded-2xl p-6 gold-border-glow text-center card-lift cursor-pointer" onclick="openGuruModal(${i})">
                 <div class="w-32 h-32 mx-auto rounded-full p-1.5 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-md">
-                    <img src="${g.img}" alt="${g.name}" class="w-full h-full object-cover rounded-full"
+                    <img src="${g.img}" alt="${g.name}" class="w-full h-full object-cover object-top rounded-full"
                          onerror="this.src='https://placehold.co/300x300/58111A/D4AF37?text=Guru'">
                 </div>
                 <h3 class="font-playfair font-bold text-maroon-900 text-lg mt-4">${g.name}</h3>
@@ -210,7 +204,7 @@ function openGuruModal(index) {
             <div class="flex flex-col md:flex-row gap-6">
                 <div class="flex-shrink-0 mx-auto md:mx-0">
                     <div class="w-36 h-36 md:w-44 md:h-44 rounded-full p-1.5 bg-gradient-to-br from-gold-400 via-gold-500 to-maroon-900 shadow-xl">
-                        <img src="${g.img}" alt="${g.name}" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/300x300/58111A/D4AF37?text=Guru'">
+                        <img src="${g.img}" alt="${g.name}" class="w-full h-full object-cover object-top rounded-full" onerror="this.src='https://placehold.co/300x300/58111A/D4AF37?text=Guru'">
                     </div>
                 </div>
                 <div class="flex-1 text-center md:text-left">
@@ -349,7 +343,7 @@ document.querySelectorAll('.btn-ripple').forEach(btn => {
     });
 });
 
-console.log('%cTablaGyan GuruVandan 2026 – crafted with reverence', 'color:#D4AF37;font-family:serif;font-size:14px;');
+console.log('%cTablaGyan GuruVandana 2026 – crafted with reverence', 'color:#D4AF37;font-family:serif;font-size:14px;');
 
 // ---------- 12. BACKGROUND MUSIC TOGGLE ----------
 (function () {
