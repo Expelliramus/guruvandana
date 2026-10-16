@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery – TablaGyan GuruVandan | Moments of Rhythm & Reverence</title>
+    <meta name="description" content="Photo gallery from TablaGyan Academy's GuruVandan celebrations.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="config.js"></script>
+    <style>
+        body { background-color: #FDFBF7; color: #2C1E18; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #AA820A 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 4px 20px -2px rgba(88, 17, 26, 0.08), 0 0 15px rgba(212, 175, 55, 0.15);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #58111A; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+        header { transition: box-shadow 0.35s ease; }
+        .header-scrolled { box-shadow: 0 8px 30px rgba(42, 7, 12, 0.45); }
+        .gallery-item {
+            position: relative; overflow: hidden; border-radius: 0.75rem; cursor: pointer;
+            background: #FDF8F0; aspect-ratio: 1 / 1;
+        }
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .gallery-item:hover img { transform: scale(1.08); }
+        .gallery-item::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(42, 7, 12, 0.55) 0%, transparent 45%);
+            opacity: 0; transition: opacity 0.35s ease; pointer-events: none;
+        }
+        .gallery-item:hover::after { opacity: 1; }
+        .gallery-item .zoom-icon {
+            position: absolute; bottom: 12px; right: 12px; width: 36px; height: 36px;
+            border-radius: 50%; background: rgba(212, 175, 55, 0.9); color: #2A070C;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transform: translateY(8px);
+            transition: opacity 0.3s ease, transform 0.3s ease; z-index: 2; pointer-events: none;
+        }
+        .gallery-item:hover .zoom-icon { opacity: 1; transform: translateY(0); }
+        .reveal {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.revealed { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-maroon-900 relative">
+
+<header class="sticky top-0 z-50 bg-maroon-900 text-white shadow-xl border-b border-gold-500/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20 md:h-24">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="https://tablagyan.com/static/images/logo-dark1.png" alt="TablaGyan logo"
+                    class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-gold-500/70 shadow-md group-hover:scale-105 transition-transform"
+                    onerror="this.style.display='none'">
+                <div class="flex flex-col">
+                    <span class="font-cinzel text-xl md:text-2xl font-bold tracking-wider gold-gradient-text">TABLAGYAN</span>
+                    <span class="text-[10px] tracking-widest text-gold-300 uppercase font-sans -mt-1">Gurukul of Rhythm &amp; Melody</span>
+                </div>
+            </a>
+            <div class="flex items-center gap-4 xl:gap-6">
+                <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold tracking-wider uppercase font-sans">
+                    <a href="index.html" class="text-gold-300 hover:text-white transition-colors">Home</a>
+                    <a href="index.html#about" class="text-gold-300 hover:text-white transition-colors">About</a>
+                    <a href="index.html#gurus" class="text-gold-300 hover:text-white transition-colors">Gurus</a>
+                    <a href="gallery.html" class="text-white border-b-2 border-gold-400 pb-0.5">Gallery</a>
+                    <a href="index.html#schedule" class="text-gold-300 hover:text-white transition-colors">Schedule</a>
+                    <a href="index.html#contact" class="text-gold-300 hover:text-white transition-colors">Contact</a>
+                </nav>
+                <button id="mobile-menu-btn" class="md:hidden text-gold-400 hover:text-white p-2" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-maroon-950 border-b border-gold-500/30 px-4 pt-3 pb-6 space-y-3">
+        <a href="index.html" class="block text-gold-300 hover:text-white text-sm font-semibold uppercase">Home</a>
+        <a href="index.html#about" class="block text-gold-300 hover:text-white text-sm font-semibold uppercase">About</a>
+        <a href="index.html#gurus" class="block text-gold-300 hover:text-white text-sm font-semibold uppercase">Gurus</a>
+        <a href="gallery.html" class="block text-white text-sm font-semibold uppercase">Gallery</a>
+        <a href="index.html#schedule" class="block text-gold-300 hover:text-white text-sm font-semibold uppercase">Schedule</a>
+        <a href="index.html#contact" class="block text-gold-300 hover:text-white text-sm font-semibold uppercase">Contact</a>
+    </div>
+</header>
+
+<section class="relative bg-gradient-to-br from-maroon-900 to-maroon-950 text-white py-14 sm:py-20 overflow-hidden">
+    <div class="absolute -right-10 -bottom-10 opacity-10 text-gold-400" aria-hidden="true">
+        <i class="fa-solid fa-camera text-[200px]"></i>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-500/40 text-gold-300 text-xs font-semibold tracking-widest uppercase mb-4">
+            <i class="fa-solid fa-images text-gold-400"></i>
+            <span>Previous Celebrations</span>
+        </div>
+        <h1 class="font-cinzel text-3xl sm:text-5xl font-extrabold gold-gradient-text tracking-wider">EVENT GALLERY</h1>
+        <p class="font-playfair italic text-gold-300 text-lg sm:text-xl mt-3">Moments of rhythm, devotion &amp; the guru-shishya bond</p>
+        <p class="text-sm text-cream-200/80 mt-4 max-w-xl mx-auto">A collection of photographs from TablaGyan's GuruVandan celebrations.</p>
+    </div>
+</section>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+        <p id="gallery-count" class="text-sm text-gray-600 font-medium">Loading photographs…</p>
+        <a href="index.html" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-maroon-900 hover:text-gold-600 transition-colors">
+            <i class="fa-solid fa-arrow-left mr-2 text-gold-500"></i> Back to GuruVandan 2026
+        </a>
+    </div>
+    <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5"></div>
+    <div id="gallery-empty" class="hidden max-w-md mx-auto text-center py-20">
+        <div class="w-20 h-20 mx-auto rounded-full bg-maroon-900/10 flex items-center justify-center mb-5">
+            <i class="fa-solid fa-images text-gold-500 text-3xl"></i>
+        </div>
+        <p class="font-playfair text-maroon-900 text-xl">No photographs found</p>
+        <p class="text-sm text-gray-500 mt-2">Ensure the <code class="text-xs bg-cream-100 px-1 rounded">selected_items</code> folder is next to this page.</p>
+    </div>
+</main>
+
+<footer class="bg-maroon-900 text-white border-t border-gold-500/30 pt-10 pb-8 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-maroon-800">
+            <div class="text-center sm:text-left">
+                <span class="font-cinzel text-xl font-bold gold-gradient-text">TABLAGYAN</span>
+                <p class="text-xs text-cream-200 mt-1">Gurukul of Rhythm &amp; Melody · Bengaluru</p>
+            </div>
+            <div class="flex space-x-3 text-gold-400 text-lg">
+                <a href="https://www.tablagyan.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-maroon-950 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-900 transition-colors" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.youtube.com/@tablagyanacademyofmusic" class="w-9 h-9 rounded-full bg-maroon-950 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-900 transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://instagram.com/tablagyan.official" class="w-9 h-9 rounded-full bg-maroon-950 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-900 transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/tabla.gyan" class="w-9 h-9 rounded-full bg-maroon-950 border border-gold-500/30 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-900 transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="text-center text-[11px] text-gray-400 font-sans mt-6">&copy; 2026 TablaGyan.com · All Rights Reserved · GuruVandan Annual Celebration</div>
+    </div>
+</footer>
+
+<div id="lightbox" class="fixed inset-0 z-[60] bg-black/92 hidden items-center justify-center p-4" role="dialog" aria-modal="true">
+    <button id="lightbox-close" class="absolute top-5 right-5 sm:top-8 sm:right-8 w-11 h-11 rounded-full bg-white/10 text-white text-2xl hover:bg-gold-500 hover:text-maroon-950 flex items-center justify-center transition-all" aria-label="Close">&times;</button>
+    <button id="lightbox-prev" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 text-white hover:bg-gold-500 hover:text-maroon-950 flex items-center justify-center transition-all" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <button id="lightbox-next" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 text-white hover:bg-gold-500 hover:text-maroon-950 flex items-center justify-center transition-all" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <img id="lightbox-img" src="" alt="Enlarged photograph" class="max-w-full max-h-[88vh] rounded-lg border-2 border-gold-500/60 shadow-2xl object-contain">
+    <div id="lightbox-counter" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm text-gold-300 font-medium tracking-wider"></div>
+</div>
+
+<script src="gallery-data.js"></script>
+<script>
+function renderGallery() {
+    var grid = document.getElementById('gallery-grid');
+    var empty = document.getElementById('gallery-empty');
+    var countEl = document.getElementById('gallery-count');
+    if (typeof imageFiles === 'undefined' || !imageFiles.length) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
+        countEl.textContent = '0 photographs';
+        return;
+    }
+    empty.classList.add('hidden');
+    countEl.textContent = imageFiles.length + ' photograph' + (imageFiles.length === 1 ? '' : 's');
+    grid.innerHTML = imageFiles.map(function (img, index) {
+        return '<div class="gallery-item gold-border-glow reveal" data-index="' + index +
+            '" onclick="openLightbox(' + index + ')" role="button" tabindex="0" aria-label="' +
+            img.title.replace(/"/g, '&quot;') + '"><img src="' + img.src + '" alt="' +
+            img.title.replace(/"/g, '&quot;') + '" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">' +
+            '<div class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus text-sm"></i></div></div>';
+    }).join('');
+    var items = grid.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                var delay = (parseInt(entry.target.dataset.index, 10) % 8) * 40;
+                setTimeout(function () { entry.target.classList.add('revealed'); }, delay);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+    items.forEach(function (el) { observer.observe(el); });
+}
+
+var currentIndex = 0;
+function openLightbox(index) {
+    if (!imageFiles.length) return;
+    currentIndex = index;
+    updateLightbox();
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('hidden');
+    lb.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+    var lb = document.getElementById('lightbox');
+    lb.classList.add('hidden');
+    lb.classList.remove('flex');
+    document.body.style.overflow = '';
+}
+function updateLightbox() {
+    document.getElementById('lightbox-img').src = imageFiles[currentIndex].src;
+    document.getElementById('lightbox-img').alt = imageFiles[currentIndex].title;
+    document.getElementById('lightbox-counter').textContent = (currentIndex + 1) + ' / ' + imageFiles.length;
+}
+function nextPhoto() { currentIndex = (currentIndex + 1) % imageFiles.length; updateLightbox(); }
+function prevPhoto() { currentIndex = (currentIndex - 1 + imageFiles.length) % imageFiles.length; updateLightbox(); }
+
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox-next').addEventListener('click', nextPhoto);
+document.getElementById('lightbox-prev').addEventListener('click', prevPhoto);
+document.getElementById('lightbox').addEventListener('click', function (e) { if (e.target.id === 'lightbox') closeLightbox(); });
+document.addEventListener('keydown', function (e) {
+    if (document.getElementById('lightbox').classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextPhoto();
+    if (e.key === 'ArrowLeft') prevPhoto();
+});
+
+document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+    var menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+    var icon = this.querySelector('i');
+    if (icon) { icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-xmark'); }
+});
+window.addEventListener('scroll', function () {
+    document.querySelector('header').classList.toggle('header-scrolled', window.scrollY > 40);
+}, { passive: true });
+
+renderGallery();
+</script>
+</body>
+</html>
